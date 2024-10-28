@@ -2,13 +2,13 @@
 title: Toolbar
 ---
 
-import Chip from '@mui/material/Chip';
-import FiberSmartRecordIcon from '@mui/icons-material/FiberSmartRecord';
-
+<DocChip chip="shadow" />
+<DocChip chip="name" label="dwc-toolbar" />
+<JavadocLink type="foundation" location="com/webforj/component/layout/toolbar/Toolbar" top='true'/>
 <!-- Add Chips -->
 
 Toolbars are a fundamental part of modern web applications, offering users quick access to core actions and navigation elements. Whether it's for managing page controls or housing key functionalities like search and notifications, the `Toolbar` component is available for your webforJ projects.
-The `Toolbar` is a horizontal container component that holds a set of action buttons, icons, or other controls, typically used for performing tasks related to the current context.
+The `Toolbar` is a horizontal container component that can hold a set of action buttons, icons, or other controls, typically used for performing tasks related to the current context.
 
 :::note
 For sectioned content, like a document viewer, consider using the [`TabbedPane`](./tabbed-pane.md) class.
@@ -18,7 +18,7 @@ For sectioned content, like a document viewer, consider using the [`TabbedPane`]
 
 The `Toolbar` saves you time by providing a consistent layout for components that you would need to have quick access for in an applicaton.
 An ideal spot for using a toolbar is inside the header of an `AppLayout` component.
-To add components to a `Toolbar`, you'll need to determine which slot the components should go into.
+To add components into a `Toolbar`, you'll first need to determine which slot the components should go into.
 
 <!-- Include this snippet as an actual demo -->
 ```Java
@@ -32,12 +32,12 @@ layout.addToHeader(toolbar);
 ```
 
 :::tip
-`AppDrawerToggle` and `IconButton` are great components to add to a `Toolbar`.
+`AppDrawerToggle` and `IconButton` are great components to add into a `Toolbar`.
 :::
 
 ## Toolbar slots
 
-To establish a hierarchy bewteen different actions inside a `Toolbar` , the content within is ogranized between four different slots.
+To establish a hierarchy bewteen different components inside a `Toolbar` , the content within is ogranized between four different slots.
 To add components inside a `Toolbar` slot, use the `addToStart()`, `addToTitle()`, `addToContent()`, and `addToEnd()` methods respecitvely.
 
 - **Start**: This is the slot on the left most side of the toolbar. If you're using the `Toolbar` in an `AppLayout`, consider adding an `AppDrawerToggle` component in this slot.
@@ -56,6 +56,8 @@ To add components inside a `Toolbar` slot, use the `addToStart()`, `addToTitle()
 Removing the vertical whitespace of a `Toolbar` allows you to have more space on the screen for other elements.
 That's why webforJ has the `setCompact()`, allowing you to have more vertical space on your application.
 Usin this method can even allow you to add multiple toolbars in one section of your app for multi row options.
+
+<!-- Potential demo with compact mode as a toggle -->
 
 ## Best practices
 1. **Mobile User**: Add the toolbar to the bottom of the screen for mobile users, as it's more reachable when users are using their thumbs.
