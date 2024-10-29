@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "@docusaurus/Link";
+import controlMap from '@site/docs/components/_dwc_control_map.json';
+import exclusions from '@site/static/exclusions.json';
 
 /**
  * TableBuilder creates tables of data for webforJ components. It can create the following tables:
@@ -16,8 +18,8 @@ import Link from "@docusaurus/Link";
 export default function TableBuilder(props) {
   const [componentData, setComponentData] = useState(null);
   const shadowDomLink = '/docs/glossary#shadow-dom';
-  const controlMap = require('@site/docs/components/_dwc_control_map.json');
-  const componentExclusions = require('@site/static/exclusions.json')[props.name.toLowerCase()];
+  const componentExclusions = exclusions[props.name.toLowerCase()];
+
   // If the name isn't in the controlMap, we just use the name as-is. 
   // This allows you to set the tag directly with something like name="dwc-alert"
   const tag = controlMap[props.name] ?? props.name;
@@ -35,7 +37,7 @@ export default function TableBuilder(props) {
         setComponentData(selectedComponent);
       });
 
-  }, []);
+  }, [tag]);
 
   // Shows while the fetch request happens 
   if (!componentData) {
@@ -57,7 +59,7 @@ export default function TableBuilder(props) {
     desc: style.docs,
   }));
   // Only include Reflected Attributes if reflectToAttr is true
-  const reflectItems = componentData.props?.filter(prop => prop.reflectToAttr == true).map((prop) => ({
+  const reflectItems = componentData.props?.filter(prop => prop.reflectToAttr).map((prop) => ({
     attr: prop.attr,
     desc: prop.docs,
     type: prop.type,
@@ -224,9 +226,12 @@ function formatText(text) {
         part
       )
     );
-
+    // Don't render empty lines, and avoid duplicate keys
+    if (processedLine[0].length === 0){
+      return null;
+    }
     return (
-      <React.Fragment key={`line-${lineIndex}`}>
+      <React.Fragment key={`${processedLine[0]}-${lineIndex}`}>
         {processedLine}
         {lineIndex < lines.length - 1 && <br />}
       </React.Fragment>
