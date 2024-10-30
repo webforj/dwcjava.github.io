@@ -5,7 +5,6 @@ title: Toolbar
 <DocChip chip="shadow" />
 <DocChip chip="name" label="dwc-toolbar" />
 <JavadocLink type="foundation" location="com/webforj/component/layout/toolbar/Toolbar" top='true'/>
-<!-- Add Chips -->
 
 Toolbars are a fundamental part of modern web applications, offering users quick access to core actions and navigation elements. Whether it's for managing page controls or housing key functionalities like search and notifications, the `Toolbar` component is available for your webforJ projects.
 The `Toolbar` is a horizontal container component that can hold a set of action buttons, icons, or other controls, typically used for performing tasks related to the current context.
@@ -20,16 +19,11 @@ The `Toolbar` saves you time by providing a consistent layout for components tha
 An ideal spot for using a toolbar is inside the header of an `AppLayout` component.
 To add components into a `Toolbar`, you'll first need to determine which slot the components should go into.
 
-<!-- Include this snippet as an actual demo -->
-```Java
-Toolbar toolbar = new Toolbar();
-toolbar.addToStart(new AppDrawerToggle());
-toolbar.addToTitle(new H1("webforJ App"));
-toolbar.setTheme(Theme.PRIMARY);
-
-AppLayout layout = new AppLayout();
-layout.addToHeader(toolbar);
-```
+<AppLayoutViewer
+path='https://demo.webforj.com/webapp/controlsamples/toolbarmobileapp?' mobile='true'
+javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/toolbar/ToolbarMobileAppView.java'
+cssURL='https://raw.githubusercontent.com/webforj/ControlSamples/main/src/main/resources/css/toolbar/toolbarMobile.css'
+/>
 
 :::tip
 `AppDrawerToggle` and `IconButton` are great components to add into a `Toolbar`.
@@ -50,24 +44,30 @@ To add components inside a `Toolbar` slot, use the `addToStart()`, `addToTitle()
 - **End**: The right most slot can be used for additonal options that won't have as much interaction as the actions inside the content.
   Some examples for actions in the `end` slot include profile settings, help button, or a link to additional resources.
 
-<!-- Demo having four components with the name of the slots -->
+<AppLayoutViewer 
+path='https://demo.webforj.com/webapp/controlsamples/toolbarslots?' mobile='false'
+javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/toolbar/ToolbarSlots.java'
+height='400px'
+/>
 
 ## Compact mode
 Removing the vertical whitespace of a `Toolbar` allows you to have more space on the screen for other elements.
-That's why webforJ has the `setCompact()`, allowing you to have more vertical space on your application.
-Usin this method can even allow you to add multiple toolbars in one section of your app for multi row options.
+That's why webforJ has the `setCompact()`, allowing you to have more vertical space on the screen.
+Using this method can even allow you to add multiple toolbars in one section of your app for multi row options.
 
-<!-- Potential demo with compact mode as a toggle -->
+<AppLayoutViewer path='https://demo.webforj.com/webapp/controlsamples/toolbarcompact?' mobile='false'
+javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/toolbar/ToolbarCompact.java'
+/>
 
 ## Best practices
-1. **Mobile User**: Add the toolbar to the bottom of the screen for mobile users, as it's more reachable when users are using their thumbs.
+1. **Mobile User**: Have toolbar actions at the bottom of the screen for mobile users, as it's more reachable when users are using their thumbs.
 2. **Limit the Amount of Actions**: Too many actions in one place can overwhelm a user, so only include the most important actions.
 3. **Group Related Actions**: Organize components in logical groups based on function. For instance, all text formatting tools together or navigation tools together.
 
 ## Styling
 
 ### Toolbar themes
-`Toolbar` components come with <JavadocLink type="foundation" location="com/webforj/component/Theme">7 discrete themes </JavadocLink> built in for quick styling without the use of CSS. These themes are pre-defined styles that can be applied to a toolbar to change its appearance and visual presentation. They offer a quick and consistent way to customize the look of `Toolbar` within an application.
+`Toolbar` components come with <JavadocLink type="foundation" location="com/webforj/component/Theme">7 discrete themes </JavadocLink> built in for quick styling without the use of CSS. These themes are pre-defined styles that can be applied to a toolbar to change its appearance and visual presentation. They offer a quick and consistent way to customize the look of `Toolbar` within an app.
 
   - **Danger**
   - **Default**
