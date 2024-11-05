@@ -10,7 +10,7 @@ title: AppNav
 
 <JavadocLink type="appnav" location="com/webforj/component/appnav/AppNav" top='true'/> 
 
-The `AppNav` component in webforJ serves as a structured navigation container, designed to organize and display a list of navigation items within an app. This component is particularly useful for creating sidebars or menus, where users can click to navigate between different sections of an application. 
+The `AppNav` component in webforJ serves as a structured navigation container, designed to organize and display a list of navigation items within an app. This component is particularly useful for creating sidebars or menus, where users can click to navigate between different sections of an app. 
 
 ## Basics
 
@@ -26,7 +26,7 @@ height='200px'
 
 ## Configuring paths and routing
 
-The `AppNav` component's navigation functionality relies on each `AppNavItem` being configured with a specific path or route, which enables it to link to different sections or views within an application. 
+The `AppNav` component's navigation feature relies on each `AppNavItem` being configured with a specific path or route, which enables it to link to different sections or views within an app. 
 
 ### Defining paths
 
@@ -47,7 +47,7 @@ appNav.addItem(settingsItem);
 ```
 
 :::caution Using registered view class
-If the router is not initialized or the view isn’t registered, attempting to set the path with a view class will throw an exception. 
+If the router isn't initialized or the view isn’t registered, attempting to set the path with a view class will throw an exception. 
 :::
 
 ### Adding query parameters
@@ -88,7 +88,7 @@ appNav.onLocationChanged(event -> {
 
 ## Setting navigation targets
 
-The `AppNavItem` component provides the `setTarget()` method, which allows you to control the behavior of each navigation item when it is clicked. By default, items open in the current browsing context, but you can customize this with the `NavigationTarget` options:
+The `AppNavItem` component provides the `setTarget()` method, which allows you to control the behavior of each navigation item when it's clicked. By default, items open in the current browsing context, but you can customize this with the `NavigationTarget` options:
 
 - **SELF (Default)**: Opens in the current browsing context.
 - **BLANK**: Opens the item in a new tab (or new window, based on browser settings).
@@ -110,7 +110,7 @@ topItem.setTarget(AppNavItem.NavigationTarget.TOP); // Opens in the top-level co
 ```
 
 
-## Automatic Group Expansion
+## Automatic group expansion
 With `setAutoOpen()`, the `AppNav` component will automatically expand groups of items when the user navigates. This behavior is helpful for hierarchical menus where you want to expose sub-items dynamically.
 
 ```java
