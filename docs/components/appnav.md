@@ -52,13 +52,15 @@ If the router is not initialized or the view isn’t registered, attempting to s
 
 ### Adding query parameters
 
-For scenarios requiring more specific navigation, such as directing users to particular sections of a page, you can add query parameters to an `AppNavItem`. The `setQueryParameters()` method accepts a `ParametersBag` object, allowing you to define multiple key-value pairs.
+For scenarios requiring more specific navigation, such as directing users to particular sections of a page, you can add query parameters to an `AppNavItem`. The `setQueryParameters()` method accepts a `ParametersBag` object, allowing you to define multiple key-value pairs. 
 
 ```java
 ParametersBag params = new ParametersBag();
 params.add("section", "overview");
 profileItem.setQueryParameters(params);
 ```
+For more details on retrieving query parameters in different views, refer to the [Retrieving query parameters](../routing/query-parameters) section.  
+
 
 ## Hierarchical navigation
 
