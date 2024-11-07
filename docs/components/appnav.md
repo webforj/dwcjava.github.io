@@ -74,6 +74,10 @@ javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads
 height='200px'
 />
 
+:::warning URLs on Top-Level Items with Nested Children 
+Avoid assigning URLs to top-level items that contain nested items. If a parent item has a URL, selecting it may trigger unwanted navigation instead of expanding the menu. Leave the URL field empty for these parent items to ensure they function as containers for their child items only.
+:::
+
 ## `AppNavLocationChangedEvent`
 
 The `AppNav` component provides a way to react to navigation changes through event listeners. By using the `onLocationChanged()` method, you can execute code each time a user selects an `AppNavItem` and navigates within the app.
