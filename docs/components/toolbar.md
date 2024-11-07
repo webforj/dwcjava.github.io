@@ -6,7 +6,7 @@ title: Toolbar
 <DocChip chip="name" label="dwc-toolbar" />
 <JavadocLink type="foundation" location="com/webforj/component/layout/toolbar/Toolbar" top='true'/>
 
-Toolbars are a fundamental part of modern web applications, offering users quick access to core actions and navigation elements. Whether it's for managing page controls or housing key functionalities like search and notifications, the `Toolbar` component is available for your webforJ projects.
+Toolbars are a fundamental part of modern web apps, offering users quick access to core actions and navigation elements. Toolbars are well-suited for managing page controls and housing key functionalities like search and notifications.
 The `Toolbar` is a horizontal container component that can hold a set of action buttons, icons, or other controls, typically used for performing tasks related to the current context.
 
 :::note
@@ -18,7 +18,7 @@ For sectioned content, like a document viewer, consider using the [`TabbedPane`]
 The `Toolbar` saves time by providing a consistent layout for components that you would need to have quick access for in an applicaton.
 To add components into a `Toolbar`, you'll first need to determine which slot the components should go into.
 
-## Toolbar slots
+### Toolbar slots
 
 The Toolbar has four different slots that content can be organized into. To add components, use the `addToStart()`, `addToTitle()`, `addToContent()`, and `addToEnd()` methods respecitvely.
 
@@ -38,7 +38,7 @@ javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads
 height='400px'
 />
 
-## Compact mode
+### Compact mode
 
 Removing the vertical whitespace of a `Toolbar` allows you to have more space on the screen for other elements.
 That's why webforJ has the `setCompact()`, allowing you to have more vertical space on the screen.
