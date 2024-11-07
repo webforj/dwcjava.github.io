@@ -8,7 +8,7 @@ import exclusions from '@site/static/exclusions.json';
  * Shadow Parts, Slots, CSS Properties, Reflected Attributes, and Dependencies
  * It pulls this data from https://dwc.style/docs/dwc-components.json
  * Example usage:
- *   <TableBuilder name="Button />
+ *   <TableBuilder name="Button" />
  *   <TableBuilder name="dwc-alert" tables={["parts", "dependencies"]};
  * @param {Object} props - Component props
  * @param {String} props.name - The name of the component

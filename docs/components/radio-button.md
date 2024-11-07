@@ -113,10 +113,6 @@ The behavior of the `RadioButton` remains the same when being rendered as a Swit
 
 ## Styling
 
-### Expanses
-There are five checkbox expanses that are supported which allow for quick styling without using CSS.
-Expanses are supported by use of the `Expanse` enum class. Below are the expanses supported for the checkbox component: <br/>
-
 <TableBuilder name="RadioButton" />
 
 ## Best practices 

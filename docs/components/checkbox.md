@@ -80,7 +80,7 @@ height = '150px'
 
 <br/>
 
-<TableBuilder name="Checkbox" />
+<TableBuilder name="CheckBox" />
 
 ## Best practices
 
