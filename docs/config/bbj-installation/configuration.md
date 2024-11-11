@@ -32,7 +32,7 @@ Tags within the `<configuration>` tag can be changed to configure your app. Edit
 </plugin>
 ```
 
-- **`<deployurl>`** This tag is the URL where the webforJ endpoint for the project installation can be reached. For users running their app locally, a default port of 8888 is used. For users running Docker, the port should be changed to the port that was entered when [configuring the Docker container](../installation/docker.md#2-configuration).
+- **`<deployurl>`** This tag is the URL where the webforJ endpoint for the project installation can be reached. For users running their app locally, a default port of 8888 is used. For users running Docker, the port should be changed to the port that was entered when [configuring the Docker container](../installation/docker#2-configuration).
 
 - **`<classname>`** This tag should contain the package and class name of the app you wish to run. This will be the single class in your project that extends the `App` class and runs from the base URL.
 

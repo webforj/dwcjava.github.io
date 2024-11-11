@@ -1,5 +1,6 @@
 {
   "label": "Getting Started",
+  "className": "sidebar--item__hidden",
   "position": 3,
   "link": {
     "type": "doc",

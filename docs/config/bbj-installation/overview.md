@@ -3,6 +3,9 @@ title: Installation Overview
 hide_table_of_contents: true
 ---
 
+:::important 
+This section will only pertain to developers using `BBjServices`. For most developers, the information in this section won't be necessary for webforJ app development or deployment.
+:::
 
 <Head>
   <style>{`

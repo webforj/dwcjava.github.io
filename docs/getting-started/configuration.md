@@ -1,6 +1,5 @@
 ---
 sidebar_position: 2
-displayed_sidebar: documentationSidebar
 ---
 
 # Configuration
@@ -50,4 +49,4 @@ For an example `web.xml` that can be used in projects, see [this file](#).
 | **`<filter>` and `<filter-mapping>`**        | Configures the `WebforjCacheControlFilter` to control caching for JavaScript files. This filter prevents caching of `.js` files by setting specific HTTP headers, improving development flow. | `WebforjCacheControlFilter`  |
 
 
-## Configuring `blsclient.conf`
+<!-- ## Configuring `blsclient.conf` -->

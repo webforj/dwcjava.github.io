@@ -92,7 +92,7 @@ supply the `Host port` configuration setting, as this will be necessary later wh
 
 Once this is finished, click the `Run` button at the bottom of the window, which will create a new container with your specified settings. -->
 
-:::success Important!
+:::success Important
 Make sure to take note of the custom Host port number you provide, as this will be needed later.
 :::
 
@@ -155,6 +155,6 @@ you to access your application. To see the application, you'll want to go to the
 `http://localhost:YourHostPort/webapp/YourPublishName`
 
 Replace `YourHostPort` with the Host port you configured with Docker, and `YourPublishName` is replaced by the text inside the `<publishname>` tag of the POM. 
-If done correctly, you should see your application render!
+If done correctly, you should see your application render.
 
 <!-- <UnderConstruction /> -->

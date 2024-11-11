@@ -74,4 +74,4 @@ mvn jetty:run
 
 This option uses the Jetty Maven Plugin, and can be configured further, or replaced with another web server. The following articles in this section will outline the various configuration options available, as well as an overview of app creation and available templates.
 
-<DocCardList className="topics-list" />
+<DocCardList className="topics-section" />

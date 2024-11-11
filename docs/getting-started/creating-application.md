@@ -6,8 +6,8 @@ title: Creating an Application
 
 Once webforJ and all applicable dependencies have been included in the POM and the desired configurations have been set, it's time to start creating an app. If you followed the previous steps, a sample `hello-world` program should be included already. This section details the various parts of the included app structure.
 
-## Start a new application
-Should you decide to create an application from scratch, you must follow a few integral steps to get the webforJ application up and running.
+## Start a new app
+Should you decide to create an app from scratch, you must follow a few integral steps to get the webforJ app up and running.
 
 ### Create a Java class
  
@@ -22,7 +22,7 @@ public class MyApplication {
 ```
 ### Extend the `App` class
 
-Your new class must extend the `App` class so that webforJ can recognize it as a webforJ application.
+Your new class must extend the `App` class so that webforJ can recognize it as a webforJ app.
 
 ```java
 import com.webforj.App;
@@ -34,7 +34,7 @@ public class MyApplication extends App{
 
 ### Override the `run()` method
 
-Next, you must override the  `run()` method. This method is where you will write the instructions for the execution of your application.
+Next, you must override the  `run()` method. This method is where you will write the instructions for the execution of your app.
 
 ```java
 import com.webforj.App;
@@ -51,7 +51,7 @@ public class MyApplication extends App{
 
 ### Create the main `Frame`
 
-Finally, in most instances, you will need to create a `Frame` within the `run()` method or in another function called by the run method. This `Frame` is the main container for the contents of your application.
+Finally, in most instances, you will need to create a `Frame` within the `run()` method or in another function called by the run method. This `Frame` is the main container for the contents of your app.
 
 ```java
 import com.webforj.App;
@@ -67,7 +67,7 @@ public class MyApplication extends App{
 }
 ```
 
-## Customizing your application
+## Customizing your app
 
 You can then add various components that come with webforJ, custom components, elements, etc., to the `Frame`. In the example below, after the `Frame` is created, a button is added to it.
 
@@ -89,15 +89,13 @@ public class ExampleClass extends App{
 }
 ```
 
-Once you have completed these steps, you can use the [installation plugin](./configuration.md) to compile and deploy your application. 
-
 :::tip
 Visit [this section](../components/overview) to see the various components that you can use in webforJ. To see how to [create your own components](../building-ui/basics), see this section.
 :::
 
 ### App data
 
-You can set the application's title, theme, and meta tags by using annotations.
+You can set the app's title, theme, and meta tags by using annotations.
 
 ```java
 @AppTitle("My app title")
