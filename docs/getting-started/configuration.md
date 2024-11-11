@@ -1,73 +1,53 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 displayed_sidebar: documentationSidebar
 ---
 
 # Configuration
 
-You can configure webforJ using a project's POM file, which is designed to make deploying an app easy. The following sections outline the various options you can change to achieve a desired result.
+To successfully deploy and run a webforJ app, a few key configuration files are required: webforJ.conf, web.xml, and blsclient.conf. Each of these files controls different aspects of the application’s behavior, from entry points and debug settings to servlet mappings and cache controls.
 
-## POM file tags
+## Configuring `webforJ.conf`
 
-Tags within the `<configuration>` tag can be changed to configure your app. Editing the following lines in the default POM file that comes with the [`HelloWorldJava`](https://github.com/webforj/HelloWorldJava) starting repository will result in these changes:
+The `webforJ.conf` file is a core configuration file in webforJ, specifying app settings like entry points, debug mode, and client-server interaction. The file is written in [HOCON format](https://github.com/lightbend/config/blob/master/HOCON.md), and should be located in the `resources` directory.
 
-```xml {13-16} showLineNumbers
-<plugin>
-    <groupId>com.webforj</groupId>
-    <artifactId>webforj-install-maven-plugin</artifactId>
-    <version>${webforj.version}</version>
-    <executions>
-        <execution>
-            <goals>
-                <goal>install</goal>
-            </goals>
-    </execution>
-    </executions>
-    <configuration>
-        <deployurl>http://localhost:8888/webforj-install</deployurl>
-        <classname>samples.HelloWorldApp</classname>
-        <publishname>hello-world</publishname>
-        <debug>true</debug>
-    </configuration>
-</plugin>
+### Example webforJ.conf File
+
+```hocon
+# This configuration file is in HOCON format:
+# https://github.com/lightbend/config/blob/master/HOCON.md
+
+webforj.entry = com.webforj.samples.Application
+webforj.debug = true
+webforj.reloadOnServerError = on
+webforj.clientHeartbeatRate = 8s
 ```
 
-- **`<deployurl>`** This tag is the URL where the webforJ endpoint for the project installation can be reached. For users running their app locally, a default port of 8888 is used. For users running Docker, the port should be changed to the port that was entered when [configuring the Docker container](../installation/docker.md#2-configuration).
+### Configuration options
 
-- **`<classname>`** This tag should contain the package and class name of the app you wish to run. This will be the single class in your project that extends the `App` class and runs from the base URL.
+| Property                   | Explanation                                                                                                                                                                           | Default Value |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| **`webforj.entry`**            | Specifies the main entry point class for the webforJ app. Set this to the fully qualified name of your main app class, such as `com.webforj.samples.Application`.    | N/A     |
+| **`webforj.debug`**            | Enables debug mode when set to `true`, providing additional logging and detailed error messages. Useful for development but should be disabled in production.                         | `true`  |
+| **`webforj.reloadOnServerError`** | If enabled, the client will attempt a single page reload if the server is temporarily inaccessible, like during hot redeployment with the Jetty Maven Plugin. This is intended for development environments and only applies when the app is temporarily unavailable during hot redeployment, not for other errors. | `on`    |
+| **`webforj.clientHeartbeatRate`** | Sets the interval at which the client pings the server to verify connectivity. For development, set this to a short interval, like `8s`, to quickly detect server availability issues. For production, avoid values below `50s` to minimize server load. | `50s`   |
 
-- **`<publishname>`** This tag specifies the name of the app in the published URL. Generally, to run your program, you'll navigate to a URL similar to `http://localhost:8888/webapp/<publishname>`, replacing `<publishname>` with the value in the `<publishname>` tag. Then, the program specified by the `<classname>` tag is run.
+## Configuring `web.xml`
 
-- **`<debug>`** The debug tag can be set to true or false, and will determine whether or not the browser's console displays error messages thrown by your program. 
+The web.xml file is an essential configuration file for Java web applications, and in webforJ, it defines important settings like the servlet configuration, URL patterns, welcome pages, and caching filters. This file should be located in the `WEB-INF` directory of your project’s deployment structure.
 
-## Running a specific program
+:::tip Example `web.xml`
+For an example `web.xml` that can be used in projects, see [this file](#).
+<!-- TODO UPDATE THE URL -->
+:::
 
-There are two ways to run a specific program in your app:
+| Setting                                      | Explanation                                                                                                                                                                               | Default Value                |
+|----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
+| **`<display-name>`**                         | Sets the display name for the web app, typically derived from the project name. This name appears in app servers' management consoles.                                     | `${project.name}`            |
+| **`<servlet>` and `<servlet-mapping>`**      | Defines the `WebforjServlet`, the core servlet for handling webforJ requests. This servlet is mapped to all URLs (`/*`), making it the main entry point for web requests.                 | `WebforjServlet`             |
+| **`<load-on-startup>`**                      | Specifies that `WebforjServlet` should be loaded when the app starts. Setting this to `1` ensures that the servlet loads immediately, which improves initial request handling.     | `1`                          |
+| **`<welcome-file-list>`**                    | Defines the default page loaded when the app starts. Here, `app` is set as the welcome file, which will be displayed when navigating to the root URL of the app.           | `app`                        |
+| **`<filter>` and `<filter-mapping>`**        | Configures the `WebforjCacheControlFilter` to control caching for JavaScript files. This filter prevents caching of `.js` files by setting specific HTTP headers, improving development flow. | `WebforjCacheControlFilter`  |
 
-1. Place the program within the `run()` method of the class that extends `App`.
-2. Utilze [routing](../../docs/routing/overview) in your webforJ app to give the program a dedicated URL.
 
-## How webforJ selects an entry point
-
-The entry point for an app is determined by the `<classname>` specified in the POM file.
-If no entry point is specified in the POM file, the system will start an entry point search.
-
-### Entry point search
-
-1. If there is a single class that extends the `App` class, that will become the entry point.
-2. If multiple classes extend `App`, the system checks if one has the `com.webforj.annotation.AppEntry` annotation. The single class annotated with `@AppEntry` will become the entry point.
-    :::warning
-    If multiple classes are annotated with `@AppEntry`, an exception is thrown, listing all the discovered classes.
-    :::
-
-If there are multiple classes that extend `App` and none of them are annotated with `@AppEntry`, an exception is thrown, detailing each subclass.
-
-## Debug mode
-
-It's also possible to run your app in debug mode, which allows the console to print comprehensive error messages. 
-
-The first option is to change the `config.bbx` file, found in the `cfg/` directory of your BBj installation. Add the line `SET DEBUG=1` to the file and save your changes.
-
-Additionally, in the Enterprise Manager, you can add the following as a program argument: `DEBUG`
-
-Completing either of these allows the browser console to print error messages.
+## Configuring `blsclient.conf`

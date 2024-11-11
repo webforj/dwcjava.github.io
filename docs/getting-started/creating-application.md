@@ -4,11 +4,7 @@ displayed_sidebar: documentationSidebar
 title: Creating an Application
 ---
 
-Once webforJ and all applicable dependencies have been installed and the POM configuration has been completed, it's time to start creating! If you followed the installation guide, a sample "Hello World" program should be included already. However, in this section, we will demonstrate how to create **a new application from scratch**.
-
-:::tip
-Using the [HelloWorldJava](./templates/hello-world) program will help expedite the creation of a simple application.
-:::
+Once webforJ and all applicable dependencies have been included in the POM and the desired configurations have been set, it's time to start creating an app. If you followed the previous steps, a sample `hello-world` program should be included already. This section details the various parts of the included app structure.
 
 ## Start a new application
 Should you decide to create an application from scratch, you must follow a few integral steps to get the webforJ application up and running.
