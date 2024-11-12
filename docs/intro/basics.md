@@ -20,7 +20,7 @@ public class Application extends App {
 }
 ```
 
-- `@Routify`: Specifies that webforJ should scan the com.webforj.samples.views package for route components.
+- `@Routify`: Specifies that webforJ should scan the `com.webforj.samples.views package` for route components.
 - `@AppTheme`: Sets the app theme, in this case, dark.
 - `@AppTitle`: Defines the title displayed on the app's browser tab.
 - `@StyleSheet`: Links an external CSS file, styles.css, allowing custom styling for the app.
