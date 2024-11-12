@@ -66,7 +66,7 @@ const config = {
       items: [
         {
           position: 'left',
-          label: 'Quick start',
+          label: 'Getting Started',
           to: '/docs/intro/getting-started',
           activeBasePath: '/docs/intro/getting-started'
         },
@@ -177,7 +177,7 @@ const config = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['java']
+      additionalLanguages: ['java', 'Ini']
     },
   }
 };
