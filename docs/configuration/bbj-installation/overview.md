@@ -1,5 +1,5 @@
 ---
-title: Installation Overview
+title: Installation with BBjServices
 hide_table_of_contents: true
 ---
 
@@ -19,6 +19,7 @@ This section will only pertain to developers using `BBjServices`. For most devel
 import DocCardList from '@theme/DocCardList';
 
 <!-- vale on -->
+disabled
 
 
 <DocCardList className="topics-list" />

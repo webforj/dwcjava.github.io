@@ -1,11 +1,34 @@
 ---
+title: Install Plugin
 sidebar_position: 4
 displayed_sidebar: documentationSidebar
 ---
 
-# Configuration
-
 You can configure webforJ using a project's POM file, which is designed to make deploying an app easy. The following sections outline the various options you can change to achieve a desired result.
+
+## Engine exclusion
+
+When running with `BBjServices`, the `webforj-engine` dependency should be excluded, as the features provided by the engine are already available.
+
+```xml
+<dependencies>
+  <dependency>
+    <groupId>com.webforj</groupId>
+    <artifactId>webforj</artifactId>
+    <version>${webforj.version}</version>
+    <exclusions>
+      <exclusion>
+        <groupId>com.webforj</groupId>
+        <artifactId>webforj-engine</artifactId>
+      </exclusion>
+    </exclusions> 
+  </dependency>
+</dependencies>
+```
+
+:::info Using the `skeleton-starter-bbj-hello-world`
+When using the `skeleton-starter-bbj-hello-world` project, this exclusion will already be configured.
+:::
 
 ## POM file tags
 

@@ -9,13 +9,13 @@ webforJ's `[skeleton-starter-bbj-hello-world](https://github.com/webforj/skeleto
 
 ## 1. Navigate to the HelloWorldJava repository
 
-To start, you'll need to go to the HelloWorldJava repository, which can be found [at this link](https://github.com/webforj/skeleton-starter-bbj-hello-world). Once there, click on the green **"Use this template"** button, and then the **"Open in a codespace"** option.
+To start, you'll need to go to the HelloWorldJava repository, which can be found [at this link](https://github.com/webforj/skeleton-starter-bbj-hello-world). Once there, click the green **"Use this template"** button, and then the **"Open in a codespace"** option.
 
 ![Codespace buttons](./_images/github/1.png#rounded-border)
 
 ## 2. Running your program
 
-After waiting for the codespace to load, you should see a browser version of VS Studio Code open with the "HelloWorldJava" sample program loaded. From here, you can run the sample program, or start developing!
+After waiting for the codespace to load, you should see a browser version of VS Studio Code open with the "HelloWorldJava" sample program loaded. From here, you can run the sample program, or start developing.
 
 To compile a program, open the terminal in VS Code and run the `mvn install` command.
 
@@ -27,7 +27,7 @@ If everything completes successfully, you should see the `BUILD SUCCESS` message
 Make sure to use the `mvn install` command instead of VS Code's built-in Maven interface for installing your program.
 :::
 
-Once this has been done, you'll need to navigate to a specific web address to see your program. To do this, first click on the **"Ports"** tab at the bottom of VS Code. Here, you will see two ports, 8888 and one other, listed.
+Once this has been done, you'll need to navigate to a specific web address to see your program. To do this, first click the **"Ports"** tab at the bottom of VS Code. Here, you will see two ports, 8888, and one other, listed.
 
 ![Forwarded Ports](./_images/github/3.png#rounded-border)
 
@@ -35,7 +35,7 @@ Click on the small **"Open in Browser"** button, resembling a globe, in the **"L
 
 ![Browser Button](./_images/github/4.png#rounded-border)
 
-When the browser tab is open, you'll want to add to the end of the URL to ensure that your application is run. First, add a `/webapp` to the end of the web address, which will end in `github.dev`. After that, add the correct app and class name (if applicable) to show the desired application. To see how to properly configure the URL, [follow this guide](../getting-started/configuration).
+When the browser tab is open, you'll want to add to the end of the URL to ensure that your app is run. First, add a `/webapp` to the end of the web address, which will end in `github.dev`. After that, add the correct app and class name (if applicable) to show the desired app. To see how to properly configure the URL, [follow this guide](../getting-started/configuration).
 
 :::success Tip
 If you want to run the default "Hello World" program, simple add `/hworld` after the `/webapp` in the URL:
@@ -45,4 +45,4 @@ If you want to run the default "Hello World" program, simple add `/hworld` after
 :::
 
 
-Once this is done, you should see your application running in the browser, and can modify it in the VS Code instance running within codespaces!
+Once this is done, you should see your app running in the browser, and can modify it in the VS Code instance running within codespaces.

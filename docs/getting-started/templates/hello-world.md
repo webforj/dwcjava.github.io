@@ -6,7 +6,7 @@ title: Hello World
 import ComponentDemo from '@site/src/components/DocsTools/ComponentDemo';
 
 
-To start a simple application, it is recommended to use webforJ's [HelloWorldJava repository](https://github.com/webforj/webforj-hello-world) as a template. This can be done using any of the [installation methods](../../installation/docker).
+To start a simple application, it is recommended to use webforJ's `[skeleton-starter-bbj-hello-world](https://github.com/webforj/skeleton-starter-bbj-hello-world)` as a template. This can be done using any of the [installation methods](../../installation/docker).
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples?' 

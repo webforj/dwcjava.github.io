@@ -144,7 +144,7 @@ in the previous step.
 - If your `<username>` and `<password>` credentials are different for your installation of BBj, change these.
 
 :::info
-The [webforj-hello-world](https://github.com/webforj/HelloWorldJava) project will come with the POM file already mostly configured - with other settings remaining the same, only the `<deployurl>` tag will need to be changed.
+The [skeleton-starter-bbj-hello-world](https://github.com/webforj/skeleton-starter-bbj-hello-world) project will come with the POM file already mostly configured - with other settings remaining the same, only the `<deployurl>` tag will need to be changed.
 :::
 
 ### Launching the application

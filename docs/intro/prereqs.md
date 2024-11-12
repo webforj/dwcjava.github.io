@@ -3,11 +3,6 @@ title: Prerequisites
 sidebar_position: 1
 ---
 
-<!-- vale off -->
-# Prerequisites for using webforJ
-
-<!-- vale on -->
-
 Before you start building apps with webforJ, make sure your development environment is set up with the following essential tools. This section overviews each of the requirements and includes links to installation guides for macOS, Windows, and Linux.
 
 <!-- vale off -->

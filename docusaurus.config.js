@@ -66,30 +66,9 @@ const config = {
       items: [
         {
           position: 'left',
-          label: 'Installation',
-          items: [
-            {
-              label: "Docker",
-              to: '/docs/installation/docker',
-              activeBasePath: '/docs/installation/docker'
-            },
-            {
-              label: "GitHub Codespaces",
-              to: '/docs/installation/github-codespaces',
-              activeBasePath: '/docs/installation/github-codespaces'
-            },
-            {
-              label: "Local",
-              to: '/docs/installation/local',
-              activeBasePath: '/docs/installation/local'
-            }
-          ]
-        },
-        {
-          position: 'left',
           label: 'Quick start',
-          to: '/docs/getting-started/overview',
-          activeBasePath: '/docs/getting-started/overview'
+          to: '/docs/intro/getting-started',
+          activeBasePath: '/docs/intro/getting-started'
         },
         {
           position: 'left',
@@ -128,7 +107,7 @@ const config = {
             },
             {
               label: "Quick Template",
-              href: 'https://github.com/webforj/webforj-hello-world',
+              href: 'https://github.com/webforj/skeleton-starter-hello-world',
               target: '_blank',
               rel: null,
             },

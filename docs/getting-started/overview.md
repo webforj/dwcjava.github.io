@@ -17,7 +17,7 @@ import DocCardList from '@theme/DocCardList';
 
 <!-- vale on -->
 
-Welcome to webforJ! This section outlines the steps to start a new project with webforJ quickly with the `webforj-hello-world` sample.
+Welcome to webforJ - this section outlines the steps to start a new project with webforJ quickly with the `skeleton-starter-hello-world` sample.
 
 
 ## Prerequisites
@@ -27,32 +27,32 @@ Before getting started, make sure you have:
 - **Maven** for managing project dependencies
 - **A Java IDE** like IntelliJ IDEA, Eclipse, or Visual Studio Code
 
-## Use the webforJ `hello-world` project
+## Use the webforJ `skeleton-starter-hello-world` project
 
-### Clone the `hello-world` repository:
+### Clone the `skeleton-starter-hello-world` repository:
 
-The most basic template provided for webforJ users is the [`webforJ-hello-world`](https://github.com/webforj/webforj-hello-world) project, which provides basic project structure and minimal code to get development started.
+The most basic template provided for webforJ users is the [`skeleton-starter-hello-world`](https://github.com/webforj/skeleton-starter-hello-world) project, which provides basic project structure and minimal code to get development started.
 
 To clone this repository, open a terminal and use the following commands:
 
 ```bash
-git clone https://github.com/webforj/webforj-hello-world.git
-cd webforj-hello-world
+git clone https://github.com/webforj/skeleton-starter-hello-world.git
+cd skeleton-starter-hello-world
 ```
 
 :::tip Downloading the ZIP
-It's also possible to download the `hello-world` project directly from GitHub if preferred.
+It's also possible to download the `skeleton-starter-hello-world` project directly from GitHub if preferred.
 :::
 
 ### Open your project in an IDE
 
-Open the webforj-hello-world project in your IDE. This project comes with webforJ as a dependency already configured, so you’re ready to run it right away.
+Open the `skeleton-starter-hello-world` project in your IDE. This project comes with webforJ as a dependency already configured, so you’re ready to run it right away.
 
 A more detailed explanation of the project's file structure and configuration options can be found in the [next article](./configuration).
 
 ### Ensure webforJ is a dependency
 
-To include webforJ in your project, add the following dependency in your pom.xml file. This has already be done in the `hello-world` project:
+To include webforJ in your project, add the following dependency in your pom.xml file. This has already be done in the `skeleton-starter-hello-world` project:
 
 ```xml
 <dependencies>

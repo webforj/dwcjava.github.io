@@ -4,7 +4,7 @@ displayed_sidebar: documentationSidebar
 title: Creating an Application
 ---
 
-Once webforJ and all applicable dependencies have been included in the POM and the desired configurations have been set, it's time to start creating an app. If you followed the previous steps, a sample `hello-world` program should be included already. This section details the various parts of the included app structure.
+Once webforJ and all applicable dependencies have been included in the POM and the desired configurations have been set, it's time to start creating an app. If you followed the previous steps, a sample `skeleton-starter-bbj-hello-world` program should be included already. This section details the various parts of the included app structure.
 
 ## Start a new app
 Should you decide to create an app from scratch, you must follow a few integral steps to get the webforJ app up and running.

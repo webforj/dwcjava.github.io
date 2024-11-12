@@ -6,7 +6,7 @@ title: Docker
 # Docker installation
 
 This section of the documentation will cover the steps required for users who wish to develop using Docker. Changes to your code
-will be made on your development machine, and the resulting application will be run in Docker. 
+will be made on your development machine, and the resulting app will be run in Docker. 
 
 ## 1. Downloading Docker
 
@@ -77,7 +77,7 @@ Open the "Optional settings" menu
 
 ![DWCJ Image Search](./_images/docker/Step_6l.png#rounded-border)
 
-Select a desired host port where you can see your application running within Docker
+Select a desired host port where you can see your app running within Docker
 
 ![DWCJ Image Search](./_images/docker/Step_7l.png#rounded-border)
 
@@ -86,7 +86,7 @@ Click "Run" to start the container
 ![DWCJ Image Search](./_images/docker/Step_8l.png#rounded-border)
 
 <!-- Click the `Run` button, which will pop up a configuration window. These settings are optional, but it is highly recommended to
-supply the `Host port` configuration setting, as this will be necessary later when running your application.
+supply the `Host port` configuration setting, as this will be necessary later when running your app.
 
 ![Configuration](./_images/docker/2.png)
 
@@ -99,7 +99,7 @@ Make sure to take note of the custom Host port number you provide, as this will 
 ## 3. Running your app
 
 Once the container has been created, webforJ applications can be run within the container instead of locally. First, it is necessary to configure
-the POM file of your project correctly. Once this is done, going to a specific URL in the browser will show the application.
+the POM file of your project correctly. Once this is done, going to a specific URL in the browser will show the app.
 
 ### Configuring your POM file
 
@@ -139,22 +139,22 @@ Once an entry similar to the one above has been created, customize the following
 - Change the `<deployurl>` entry to use the port number that you match the **Host port** that you configured for your container
 in the previous step.
 
-- Ensure that the `<classname>` entry matches the name of the application you want to run.
+- Ensure that the `<classname>` entry matches the name of the app you want to run.
 
 - If your `<username>` and `<password>` credentials are different for your installation of BBj, change these.
 
 :::info
-The [webforj-hello-world](https://github.com/webforj/HelloWorldJava) project will come with the POM file already mostly configured - with other settings remaining the same, only the `<deployurl>` tag will need to be changed.
+The [skeleton-starter-bbj-hello-world](https://github.com/webforj/skeleton-starter-bbj-hello-world) project will come with the POM file already mostly configured - with other settings remaining the same, only the `<deployurl>` tag will need to be changed.
 :::
 
-### Launching the application
+### Launching the app
 
 Once this has been done, run a `mvn install` in your project directory. This will run the webforJ install plugin, and allow
-you to access your application. To see the application, you'll want to go to the following URL:
+you to access your app. To see the app, you'll want to go to the following URL:
 
 `http://localhost:YourHostPort/webapp/YourPublishName`
 
 Replace `YourHostPort` with the Host port you configured with Docker, and `YourPublishName` is replaced by the text inside the `<publishname>` tag of the POM. 
-If done correctly, you should see your application render.
+If done correctly, you should see your app render.
 
 <!-- <UnderConstruction /> -->
