@@ -15,6 +15,7 @@ This class extends the core `App` class from webforJ, making it recognizable as 
 @Routify(packages = "com.webforj.samples.views")
 @AppTheme("dark")
 @AppTitle("webforJ Hello World")
+@StyleSheet("context://styles/styles.css")
 public class Application extends App {
 }
 ```
@@ -37,12 +38,13 @@ The `HomeView` class defines a simple view component that serves as the homepage
 `HomeView` extends `Composite<FlexLayout>`, which allows it to act as a reusable component containing a [`FlexLayout`](../components/flex-layout) component. The [`@StyleSheet`](../styling/getting-started#using-annotations) annotation applies a CSS stylesheet, and [`@Route("/")`](../routing/overview) makes this the root route of the app.
 
 ```java
-@StyleSheet("context://styles/styles.css")
 @Route("/")
 public class HomeView extends Composite<FlexLayout> {
 ```
 
-### Component initialization
+<!-- TODO update/reinstate this section once hello world is overhauled -->
+
+<!-- ### Component initialization
 
 Inside the class, several UI elements are initialized and declared:
 
@@ -83,7 +85,32 @@ public HomeView() {
 
 - Layout Settings: The [`FlexLayout`](../components/flex-layout) is configured to stack items vertically, using `FlexDirection.COLUMN`, center them using `FlexJustifyContent.CENTER and FlexAlignment.CENTER`, and add spacing by calling `setSpacing("3em")`.
 - Button Action: The counter button uses a click event listener, `onClick`, to increment the count and update its label whenever it’s clicked.
-- Component Addition: Finally, all elements are added to the layout via `self.add(image, title, counter, and docs)`.
+- Component Addition: Finally, all elements are added to the layout via `self.add(image, title, counter, and docs)`. -->
+
+### Component initialization
+
+Inside the class, several UI elements are initialized and declared:
+
+```java
+private FlexLayout self = getBoundComponent();
+private TextField hello = new TextField("What is your name?");
+private Button btn = new Button("Say Hello");
+```
+
+- `self`: The main layout component using [`FlexLayout`](../components/flex-layout), configured as a container for the elements. This element uses the `getBoundComponent()` method to store the main `FlexLayout` the class contains.
+- `hello`: A [`TextField`](../components/fields/text-field) labeled `What is your name?` for users to input their name.
+- `btn`: A primary-styled [`Button`](../components/button) labeled `Say Hello`.
+
+### Layout configuration
+
+The layout `(self)` is configured with a few key style properties:
+
+- `FlexDirection.COLUMN` stacks the elements vertically.
+- `setMaxWidth(300)` restricts the width to 300 pixels for a compact layout.
+- `setStyle("margin", "1em auto")` centers the layout with a margin around it.
+
+### Adding components to the layout
+Finally, the hello text field and btn button are added to the [`FlexLayout`](../components/flex-layout) container by calling `self.add(hello, btn)`. This arrangement defines the view’s structure, making the form both interactive and visually centered.
 
 ## Styling the app
 
