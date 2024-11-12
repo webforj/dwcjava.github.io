@@ -1,5 +1,5 @@
 ---
-title: Installation with BBjServices
+title: Running with BBjServices
 hide_table_of_contents: true
 ---
 
