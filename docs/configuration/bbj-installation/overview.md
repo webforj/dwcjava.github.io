@@ -19,7 +19,5 @@ This section will only pertain to developers using `BBjServices`. For most devel
 import DocCardList from '@theme/DocCardList';
 
 <!-- vale on -->
-disabled
-
 
 <DocCardList className="topics-list" />
