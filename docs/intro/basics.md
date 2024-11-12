@@ -7,31 +7,29 @@ Once webforJ and its dependencies are set up in your project, you're ready to cr
 
 ## Main app class: `Application.java`
 
-The `Application` class serves as the entry point for your webforJ app, setting up essential configurations, themes, and routes. To start, notice the class's declaration and annotations. 
+The `Application` class serves as the entry point for your webforJ app, setting up essential configurations and routes. To start, notice the class's declaration and annotations. 
 
 This class extends the core `App` class from webforJ, making it recognizable as a webforJ app. Various annotations configure the app's theme, title, and routing.
 
 ```java
-@Routify(packages = "com.webforj.samples.views")
-@AppTheme("dark")
+@Routify(packages = "com.samples.views")
 @AppTitle("webforJ Hello World")
-@StyleSheet("context://styles/styles.css")
+@StyleSheet("ws://app.css")
 public class Application extends App {
 }
 ```
 
-- `@Routify`: Specifies that webforJ should scan the `com.webforj.samples.views package` for route components.
-- `@AppTheme`: Sets the app theme, in this case, dark.
+- `@Routify`: Specifies that webforJ should scan the `com.samples.views package` for route components.
 - `@AppTitle`: Defines the title displayed on the app's browser tab.
-- `@StyleSheet`: Links an external CSS file, styles.css, allowing custom styling for the app.
+- `@StyleSheet`: Links an external CSS file, `app.css`, allowing custom styling for the app.
 
 The Application class doesn't contain any additional methods because the configurations are set through annotations, and webforJ handles the app initialization.
 
-With `Application.java` set up, the app is now configured with a title, dark theme, and routes pointing to the views package. Next, an overview of the `HomeView` class gives insight into what is displayed when the app is run.
+With `Application.java` set up, the app is now configured with a title and routes pointing to the views package. Next, an overview of the `HomeView` class gives insight into what's displayed when the app is run.
 
 ## Main view class: `HomeView.java`
 
-The `HomeView` class defines a simple view component that serves as the homepage for the app. It displays a title, an image, a button that increments a counter, and a link to the docs.
+The `HomeView` class defines a simple view component that serves as the homepage for the app. It displays a field and a button that to greet the user's typed name.
 
 ### Class declaration and annotations
 
@@ -114,6 +112,6 @@ Finally, the hello text field and btn button are added to the [`FlexLayout`](../
 
 ## Styling the app
 
-The `styles.css` file provides custom styling for your webforJ app. This CSS file is referenced in the HomeView class using the [`@StyleSheet`](../styling/getting-started#using-annotations) annotation, which allows the app to apply styles to components within the app.
+The `styles.css` file provides custom styling for your webforJ app. This CSS file is referenced in the Application class using the [`@StyleSheet`](../styling/getting-started#using-annotations) annotation, which allows the app to apply styles to components within the app.
 
-This file is located in the `resources` directory of the project, and can be referenced using the context URL `context://styles/styles.css`. This enables webforJ to locate and apply the style sheet.
+This file is located in the `resources/static` directory of the project, and can be referenced using the context URL `ws://app.css`. This enables webforJ to locate and apply the style sheet.
