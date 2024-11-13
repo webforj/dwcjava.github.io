@@ -14,7 +14,7 @@ The `Terminal` component in webforJ provides a command-line interface within a w
 
 To initialize a `Terminal` component in webforJ, simply create an instance of the Terminal class and configure any desired properties. At its most basic, the `Terminal` provides an interactive text area where users can enter commands and receive output. 
 
-This example creates a basic `Terminal` component:
+The following example demonstrates a `Terminal` component with enhanced functionality, including command history navigation (using arrow keys), command processing, and interactive prompts. These features make it easier to build a realistic command-line experience within your application.
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/terminal?'  
@@ -42,7 +42,9 @@ terminal.addDataListener(event -> {
 ```
 
 ## Command processing
-The `Terminal` component allows you to define custom commands, enabling the creation of an interactive command-line environment. You can capture user commands, split them into arguments, and use a switch statement to process each command.
+The `Terminal` component allows you to define custom commands, enabling the creation of an interactive command-line environment. 
+
+Here's an example of capturing user commands and processing each command:
 
 ```java
 private void processCommand(Terminal terminal, String command) {
@@ -71,75 +73,6 @@ private void processCommand(Terminal terminal, String command) {
 }
 ```
 In this setup, commands like time, clear, and help are predefined, and unrecognized commands are handled with an error message.
-
-## Command history
-The `Terminal` component supports command history navigation, allowing users to cycle through previous commands using the up and down arrow keys. This is achieved by storing commands in a commandHistory list and updating the input field based on the current history index.
-
-### Storing commands
-Each time a command is entered (by pressing Enter), it is added to the commandHistory list. The historyIndex is updated to the end of the list, allowing users to navigate back through previous commands.
-
-```java
-case "\r": // Enter Key
-    terminal.write("\r\n");
-    if (!commandBuffer.trim().isEmpty()) {
-        commandHistory.add(commandBuffer);
-        historyIndex = commandHistory.size();
-    }
-    processCommand(terminal, commandBuffer);
-    commandBuffer = ""; // Reset command buffer for new input
-    terminal.write("$ ");
-    break;
-```
-
-:::info Tip
-For a smoother user experience, ensure the command history does not store empty commands. You can add a check before saving to commandHistory to ensure that only meaningful commands are stored.
-:::
-
-### Navigating command history
-Users can cycle through past commands with the arrow keys. Pressing the up arrow displays the previous command, while the down arrow shows the next command (or clears the input if no more history is available).
-
-```java
-// Up Arrow Key: Navigate to previous command in history
-case "\u001b[A": // Up arrow key
-    if (historyIndex > 0) {
-        historyIndex--;
-        replaceCommandBuffer(terminal, commandHistory.get(historyIndex));
-    }
-    break;
-
-// Down Arrow Key: Navigate to next command in history
-case "\u001b[B": // Down arrow key
-    if (historyIndex < commandHistory.size() - 1) {
-        historyIndex++;
-        replaceCommandBuffer(terminal, commandHistory.get(historyIndex));
-    } else if (historyIndex == commandHistory.size() - 1) {
-        historyIndex++;
-        replaceCommandBuffer(terminal, "");
-    }
-    break;
-```
-### Editing the current command
-If the user presses Backspace, the `Terminal` component removes the last character from `commandBuffer` and updates the display. This allows users to modify the current command before submitting it.
-
-```java
-case "\u007F": // Backspace key
-    if (commandBuffer.length() > 0) {
-        commandBuffer = commandBuffer.substring(0, commandBuffer.length() - 1);
-        terminal.write("\b \b"); // Visually remove character
-    }
-    break;
-```
-### Displaying printable characters
-Finally, for any other printable character, it’s added to the commandBuffer and displayed in the `Terminal`.
-
-```java
-default:
-    if (isPrintable) {
-        commandBuffer += input;
-        terminal.write(input);
-    }
-    break;
-```
 
 ## Styling
 
