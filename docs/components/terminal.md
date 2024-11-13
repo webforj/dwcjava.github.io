@@ -14,7 +14,7 @@ The `Terminal` component in webforJ provides a command-line interface within a w
 
 To initialize a `Terminal` component in webforJ, simply create an instance of the Terminal class and configure any desired properties. At its most basic, the `Terminal` provides an interactive text area where users can enter commands and receive output. 
 
-The following example demonstrates a `Terminal` component with enhanced functionality, including command history navigation (using arrow keys), command processing, and interactive prompts. These features make it easier to build a realistic command-line experience within your application.
+The following example demonstrates a `Terminal` component with enhanced functionality, including command history navigation (using arrow keys), command processing, and interactive prompts. These features make it easier to build a realistic command-line experience within your app.
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/terminal?'  
