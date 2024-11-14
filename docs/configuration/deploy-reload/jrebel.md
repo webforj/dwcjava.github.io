@@ -10,7 +10,7 @@ When a change is made to a class, method, or field, JRebel compiles and injects 
 
 The official JRebel site provides [quick start instructions](https://www.jrebel.com/products/jrebel/learn) to get the product up and running in various popular IDEs. Follow these instructions to integrate JRebel into your development environment.
 
-After setup is complete, open a webforJ project, and ensure that the `scanIntervalSeconds` property in the `pom.xml` file is set to `0` to disable the automatic restart of the server. Once this is done, use the following command:
+After setup is complete, open a webforJ project, and ensure that the jetty `scan` property in the `pom.xml` file is set to `0` to disable the automatic restart of the server. Once this is done, use the following command:
 
 ```bash
 mvn jetty:run
