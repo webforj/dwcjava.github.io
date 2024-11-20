@@ -16,7 +16,7 @@ The `AppNav` component in webforJ serves as a structured navigation container, d
 
 Each link or menu item in the navigation is represented by an `AppNavItem` which allows you to set a navigation path, add custom text, and include optional icons or other components as prefixes or suffixes. 
 
-To create a basic AppNav structure, you initialize the AppNav component and then add individual AppNavItem objects to represent the navigation links. 
+To create a basic `AppNav` structure, you initialize the `AppNav` component and then add individual `AppNavItem` objects to represent the navigation links. 
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/appnavbasics?'  
