@@ -14,7 +14,7 @@ The `Terminal` component in webforJ provides a command-line interface within a w
 
 To initialize a `Terminal` component in webforJ, simply create an instance of the Terminal class and configure any desired properties. At its most basic, the `Terminal` provides an interactive text area where users can enter commands and receive output. 
 
-The following example demonstrates a `Terminal` component with enhanced functionality, including command history navigation (using arrow keys), command processing, and interactive prompts. These features make it easier to build a realistic command-line experience within your app.
+The following example demonstrates a `Terminal` component with enhanced functionality, including command history navigation with the arrow keys, command processing, and interactive prompts. These features make it easier to build a realistic command-line experience within your app.
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/terminal?'  
@@ -23,15 +23,15 @@ height='300px'
 />
 
 ## Writing text to the `Terminal`
-The `Terminal`` component provides methods to display text in different ways:
+The `Terminal` component provides methods to display text in different ways:
 
 - `write()`: Outputs text without a newline, which is useful for prompts or ongoing lines of text that should stay on the same line.
 - `writeln()`: Outputs text followed by a newline, ideal for messages or commands that should appear on separate lines.
 
 ## Reading user input
-To capture user input, use the `addDataListener()` method. This method listens for user keypresses and processes the entered text when the user presses Enter.
+To capture user input, use the `addDataListener()` method. This method listens for user keypresses and processes the entered text when the user presses <kbd>Enter</kbd>.
 
-In this example, each time the user presses Enter, the `Terminal` captures the input, displays it back to the user, and shows a new prompt. This setup is essential for creating an interactive command interface.
+In this example, each time the user presses <kbd>Enter</kbd>, the `Terminal` captures the input, displays it back to the user, and shows a new prompt. This setup is essential for creating an interactive command interface.
 
 ```java
 terminal.addDataListener(event -> {
@@ -72,7 +72,7 @@ private void processCommand(Terminal terminal, String command) {
     terminal.write("$ ");
 }
 ```
-In this setup, commands like time, clear, and help are predefined, and unrecognized commands are handled with an error message.
+In this setup, the commands `time`, `clear`, and `help` are predefined, and handles unrecognized commands with an error message.
 
 ## Styling
 
