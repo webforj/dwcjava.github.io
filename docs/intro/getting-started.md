@@ -3,43 +3,38 @@ title: Getting Started
 sidebar_position: 2
 ---
 
-This article outlines the steps to start a new project with webforJ quickly with the `skeleton-starter-hello-world` sample.
+This article outlines the steps to scaffold a new webforJ app using the `skeleton-starter-hello-world` archetype. This archetype includes a pre-configured project structure and starter code to quickly get a project up and running.
 
 <!-- vale off -->
 import DocCardList from '@theme/DocCardList';
 
 <!-- vale on -->
 
-## Clone the skeleton starter repository
 
-The most basic template provided for webforJ users is the [`skeleton-starter-hello-world`](https://github.com/webforj/skeleton-starter-hello-world) project, which provides basic project structure and minimal code to get development started.
+## Using the `skeleton-starter-hello-world` archetype
 
-To clone this repository, open a terminal and use the following commands:
+To create a new project using the `skeleton-starter-hello-world`, follow these steps:
+
+1) **Navigate to the proper directory**:
+Open a terminal and move to the folder where you want to create your new project.
+
+2) **Run the archetype command**:
+Use the Maven command below, and customize the `groupId`, `artifactId`, and `version` as needed for your project. To proceed with the `skeleton-starter-hello-world` archetype, use the following command:
 
 ```bash
-git clone https://github.com/webforj/skeleton-starter-hello-world.git
-cd skeleton-starter-hello-world
+mvn -B archetype:generate \
+-DarchetypeGroupId=com.webforj \
+-DarchetypeArtifactId=webforj-archetype-hello-world \
+-DgroupId=org.example \
+-DartifactId=my-hello-world-app \
+-Dversion=1.0-SNAPSHOT
 ```
 
-:::tip Downloading the ZIP
-It's also possible to download the `skeleton-starter-hello-world` project directly from GitHub if preferred.
-:::
+After running the command, Maven will generate the project files necessary to run the starter project.
 
-## Import your project in an IDE
+### Run the app
 
-Import the starter project in your IDE. This project comes with webforJ as a dependency already configured, so you’re ready to run it right away. The dependency in the POM file should be as follows:
-
-```xml
-<dependency>
-  <groupId>com.webforj</groupId>
-  <artifactId>webforj</artifactId>
-  <version>${webforj.version}</version>
-</dependency>
-```
-
-## Run the app
-
-In the terminal, run the following command from the project’s root directory:
+Navigate into the newly created directory, and run the following command from the project’s root directory:
 
 ```bash
 mvn jetty:run
