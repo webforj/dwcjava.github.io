@@ -3,7 +3,7 @@ title: Getting Started
 sidebar_position: 2
 ---
 
-This article outlines the steps to scaffold a new webforJ app using the `skeleton-starter-hello-world` archetype. This archetype includes a pre-configured project structure and starter code to quickly get a project up and running.
+This article outlines the steps to scaffold a new webforJ app using the starter project. This archetype includes a pre-configured project structure and starter code to quickly get a project up and running.
 
 <!-- vale off -->
 import DocCardList from '@theme/DocCardList';
@@ -11,15 +11,15 @@ import DocCardList from '@theme/DocCardList';
 <!-- vale on -->
 
 
-## Using the `skeleton-starter-hello-world` archetype
+## Using the webforJ starter project
 
-To create a new project using the `skeleton-starter-hello-world`, follow these steps:
+To create and scaffold a new project, follow these steps:
 
 1) **Navigate to the proper directory**:
 Open a terminal and move to the folder where you want to create your new project.
 
 2) **Run the archetype command**:
-Use the Maven command below, and customize the `groupId`, `artifactId`, and `version` as needed for your project. To proceed with the `skeleton-starter-hello-world` archetype, use the following command:
+Use the Maven command below, and customize the `groupId`, `artifactId`, and `version` as needed for your project. To proceed with the webforJ starter project, use the following command:
 
 ```bash
 mvn -B archetype:generate \

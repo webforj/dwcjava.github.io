@@ -131,41 +131,34 @@ Finally, click on the "Configure" button, which will open a new window. In this 
 ![Enabling Remote Installation](./_images/users/local/i6.png#rounded-border) -->
 
 
+4. ### Using the starter project
+Once BBj and the required webforJ plugin are installed and configured, you can create a new, scaffolded project from the command line. This project comes with the necessary tools to run your first webforJ program.
 
-## 4. Clone the repository
+To create and scaffold a new project, follow these steps:
 
-Once BBj and the required webforJ plugin are installed and configured, clone the "Hello World" repository from the webforJ Github page. This project comes with the necessary tools to run your first webforJ program.
+1) **Navigate to the proper directory**:
+Open a terminal and move to the folder where you want to create your new project.
 
-To begin, navigate to the [HelloWorldJava repository](https://github.com/webforj/HelloWorldJava) and clone the project to your machine.
+2) **Run the archetype command**:
+Use the Maven command below, and customize the `groupId`, `artifactId`, and `version` as needed for your project. To proceed with the webforJ starter project, use the following command:
 
-Click on the Code button
-![Plugin manager configuration](./_images/local/Step_10l.png#rounded-border)
-
-Copy the repository URL to your clipboard to clone
-![Plugin manager configuration](./_images/local/Step_11l.png#rounded-border)
-
-<!-- :::info
-You can also opt to use the GitHub Codespace without cloning the project on your local machine, and do all of your development on the cloud!
-::: -->
-
-Once the project is cloned onto your machine, you can open it with your preferred IDE. Within your IDE, navigate to the pom.xml file that comes with the project. Within this file are various tags that can be modified to install your app to your own desired specifications.
-
-:::tip
-For first time users, it's recommended to use the default settings and avoid changing the pom.xml that comes with the project.
-:::
-
-Proceed to open the folder in your preferred terminal, and run the following command:
-
-```
-mvn install
+```bash
+mvn -B archetype:generate \
+-DarchetypeGroupId=com.webforj \
+-DarchetypeArtifactId=webforj-archetype-bbj-hello-world \
+-DgroupId=org.example \
+-DartifactId=my-hello-world-app \
+-Dversion=1.0-SNAPSHOT
 ```
 
-This will run the installation plugin which will do the work of setting your project up for you.
+After running the command, Maven will generate the project files necessary to run the starter project.
 
-:::info
-If the above command doesn't work, ensure your environment variables have been sufficiently edited to run Maven globally.
-:::
+### 5. Launching the app
 
-Once this process has been completed, you should be able to navigate top the following URL and see your program running:
+Once this has been done, run a `mvn install` in your project directory. This will run the webforJ install plugin, and allow
+you to access your app. To see the app, you'll want to go to the following URL:
 
-`http://localhost:8888/webapp/hworld`
+`http://localhost:YourHostPort/webapp/YourPublishName`
+
+Replace `YourHostPort` with the Host port you configured with Docker, and `YourPublishName` is replaced by the text inside the `<publishname>` tag of the POM. 
+If done correctly, you should see your app render.

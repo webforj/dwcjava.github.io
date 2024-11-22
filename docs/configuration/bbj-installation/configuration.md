@@ -26,10 +26,6 @@ When running with `BBjServices`, the `webforj-engine` dependency should be exclu
 </dependencies>
 ```
 
-:::info Using the `skeleton-starter-bbj-hello-world`
-When using the `skeleton-starter-bbj-hello-world` project, this exclusion will already be configured.
-:::
-
 ## POM file tags
 
 Tags within the `<configuration>` tag can be changed to configure your app. Editing the following lines in the default POM file that comes with the [`HelloWorldJava`](https://github.com/webforj/HelloWorldJava) starting repository will result in these changes:
