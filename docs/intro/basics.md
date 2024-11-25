@@ -19,7 +19,7 @@ public class Application extends App {
 }
 ```
 
-- `@Routify`: Specifies that webforJ should scan the `com.samples.views package` for route components.
+- `@Routify`: Specifies that webforJ should scan the `com.samples.views` package for route components.
 - `@AppTitle`: Defines the title displayed on the app's browser tab.
 - `@StyleSheet`: Links an external CSS file, `app.css`, allowing custom styling for the app.
 
@@ -33,11 +33,28 @@ The `HomeView` class defines a simple view component that serves as the homepage
 
 ### Class declaration and annotations
 
-`HomeView` extends `Composite<FlexLayout>`, which allows it to act as a reusable component containing a [`FlexLayout`](../components/flex-layout) component. The [`@StyleSheet`](../styling/getting-started#using-annotations) annotation applies a CSS stylesheet, and [`@Route("/")`](../routing/overview) makes this the root route of the app.
+`HomeView` extends `Composite<FlexLayout>`, which allows it to act as a reusable component composed of a [`FlexLayout`](../components/flex-layout) component. The [`@Route("/")`](../routing/overview) makes this the root route of the app.
 
 ```java
 @Route("/")
-public class HomeView extends Composite<FlexLayout> {
+public class HelloWorldView extends Composite<FlexLayout> {
+
+  private FlexLayout self = getBoundComponent();
+  private TextField hello = new TextField("What is your name?");
+  private Button btn = new Button("Say Hello");
+
+  public HelloWorldView(){
+    self.setDirection(FlexDirection.COLUMN);
+    self.setMaxWidth(300);
+    self.setStyle("margin", "1em auto");
+
+    btn.setTheme(ButtonTheme.PRIMARY)
+        .addClickListener(e -> 
+          Toast.show("Welcome to webforJ Starter " + hello.getValue() + "!", Theme.GRAY));
+
+    self.add(hello, btn);
+  }
+}
 ```
 
 <!-- TODO update/reinstate this section once hello world is overhauled -->
@@ -114,4 +131,4 @@ Finally, the hello text field and btn button are added to the [`FlexLayout`](../
 
 The `styles.css` file provides custom styling for your webforJ app. This CSS file is referenced in the Application class using the [`@StyleSheet`](../styling/getting-started#using-annotations) annotation, which allows the app to apply styles to components within the app.
 
-This file is located in the `resources/static` directory of the project, and can be referenced using the context URL `ws://app.css`. This enables webforJ to locate and apply the style sheet.
+This file is located in the `resources/static` directory of the project, and can be referenced using the web server URL `ws://app.css`.
