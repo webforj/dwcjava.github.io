@@ -26,6 +26,7 @@ mvn -B archetype:generate \
 -DarchetypeGroupId=com.webforj \
 -DarchetypeArtifactId=webforj-archetype-hello-world \
 -DgroupId=org.example \
+-DarchetypeVersion=24.20 \
 -DartifactId=my-hello-world-app \
 -Dversion=1.0-SNAPSHOT
 ```
