@@ -1,6 +1,7 @@
 ---
 title: App Basics
 sidebar_position: 3
+pagination_next: 
 ---
 
 Once webforJ and its dependencies are set up in your project, you're ready to create the app structure. This article will walk through the key elements of a basic webforJ app, specifically focusing on the `Application` and `HomeView` classes, which are the foundational classes in the [`skeleton-starter-hello-world`](https://github.com/webforj/skeleton-starter-hello-world) project.
