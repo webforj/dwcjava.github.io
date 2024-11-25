@@ -12,3 +12,4 @@ Auto-Detection
 CLI
 POM
 JVM
+webforJ

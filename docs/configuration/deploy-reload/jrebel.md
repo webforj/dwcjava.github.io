@@ -1,6 +1,5 @@
 ---
 title: JRebel
-hide_table_of_contents: true
 ---
 
 JRebel is a Java development tool that integrates with the JVM to detect code changes and replace modified classes directly in memory, allowing developers to see code changes immediately without restarting the server. 
