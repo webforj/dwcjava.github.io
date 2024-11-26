@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Configurating webforJ properties
 
-To successfully deploy and run a webforJ app, a few key configuration files are required: `webforJ.conf`, `web.xml`, and `blsclient.conf`. Each of these files controls different aspects of the app's behavior, from entry points and debug settings to servlet mappings.
+To successfully deploy and run a webforJ app, a couple key configuration files are required: `webforJ.conf` and `web.xml`. Each of these files controls different aspects of the app's behavior, from entry points and debug settings to servlet mappings.
 
 ## Configuring `webforj.conf`
 
