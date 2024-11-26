@@ -33,7 +33,7 @@ mvn -B archetype:generate \
 
 | Argument             | Explanation                                                                 |
 |----------------------|-----------------------------------------------------------------------------|
-| `archetypeGroupId` | The group ID of the archetype is `com.webforj` for webforJ archetypes.`.|
+| `archetypeGroupId` | The group ID of the archetype is `com.webforj` for webforJ archetypes.|
 | `archetypeArtifactId` | Specifies the name of the archetype to use. |
 | `archetypeVersion` | Specifies the version of the archetype you want to use. This ensures that the generated project is compatible with a specific version of the archetype.|
 | `groupId`          | Represents the namespace for the generated project. Typically structured like a Java package, such as `org.example` and is used to uniquely identify your organization or project domain.|
