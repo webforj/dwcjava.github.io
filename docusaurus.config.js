@@ -67,8 +67,8 @@ const config = {
         {
           position: 'left',
           label: 'Getting Started',
-          to: '/docs/intro/getting-started',
-          activeBasePath: '/docs/intro/getting-started'
+          to: '/docs/introduction/getting-started',
+          activeBasePath: '/docs/introduction/getting-started'
         },
         {
           position: 'left',
