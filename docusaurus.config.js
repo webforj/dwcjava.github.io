@@ -40,7 +40,21 @@ const config = {
       }),
     ],
   ],
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          // /docs/oldDoc -> /docs/newDoc
+          {
+            from: '/docs/installation/docker',
+            to: '/docs/introduction/getting-started',
+          },
+        ],
+      },
+    ]
+  ],
   themeConfig: {
     algolia: {
       appId: '826LUKOV8E',

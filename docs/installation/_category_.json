@@ -1,9 +1,0 @@
-{
-  "label": "Installation",
-  "position": 2222222,
-  "className": "sidebar--item__hidden",
-  "link": {
-    "type": "doc",
-    "id": "overview"
-  }
-}

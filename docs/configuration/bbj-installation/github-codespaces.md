@@ -5,11 +5,11 @@ title: Github Codespaces
 
 import UnderConstruction from '@site/src/components/PageTools/UnderConstruction';
 
-webforJ's `[skeleton-starter-bbj-hello-world](https://github.com/webforj/skeleton-starter-bbj-hello-world)` has been configured to run in Github Codespaces. Codespaces is a cloud-based development environment, and allows you to develop and run webforJ applications directly within your browser. To start developing with this tool, follow the steps below:
+[`webforj-hello-world`](https://github.com/webforj/webforj-hello-world) has been configured to run in Github Codespaces. Codespaces is a cloud-based development environment, and allows you to develop and run webforJ applications directly within your browser. To start developing with this tool, follow the steps below:
 
 ## 1. Navigate to the HelloWorldJava repository
 
-To start, you'll need to go to the HelloWorldJava repository, which can be found [at this link](https://github.com/webforj/skeleton-starter-bbj-hello-world). Once there, click the green **"Use this template"** button, and then the **"Open in a codespace"** option.
+To start, you'll need to go to the HelloWorldJava repository, which can be found [at this link](https://github.com/webforj/webforj-hello-world). Once there, click the green **"Use this template"** button, and then the **"Open in a codespace"** option.
 
 ![Codespace buttons](./_images/github/1.png#rounded-border)
 
