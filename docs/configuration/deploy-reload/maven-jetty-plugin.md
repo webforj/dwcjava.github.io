@@ -12,7 +12,7 @@ Here are some essential configurations for fine-tuning the plugin’s hot deploy
 
 | Property                          | Description                                                                                                                                                                           | Default        |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
-| **`scan`**         | Configures how often the Jetty server scans for file changes in the **`pom.xml`**. The skeleton project sets this to `2` seconds. Increasing this interval can reduce CPU load but may delay changes being reflected in the app. | `2`            |
+| **`scan`**         | Configures how often the Jetty server scans for file changes in the **`pom.xml`**. The skeleton project sets this to `2` seconds. Increasing this interval can reduce CPU load but may delay changes being reflected in the app. | `1`            |
 
 ## webforJ configurations
 
