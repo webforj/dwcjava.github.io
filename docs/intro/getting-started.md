@@ -33,12 +33,12 @@ mvn -B archetype:generate \
 
 | Argument             | Explanation                                                                 |
 |----------------------|-----------------------------------------------------------------------------|
-| `-DarchetypeGroupId` | Identifies the "namespace" or organization responsible for the archetype. It is typically structured as a reversed domain name, such as `com.example`.|
-| `-DarchetypeArtifactId` | Specifies the name of the archetype, such as `webapp-archetype`. This is the unique identifier for the archetype within the group.|
-| `-DarchetypeVersion` | Specifies the version of the archetype you want to use. This ensures that the generated project is compatible with a specific version of the archetype.|
-| `-DgroupId`          | Represents the namespace for the generated project. Typically structured like a Java package, such as `org.example` and is used to uniquely identify your organization or project domain.|
-| `-DartifactId`       | Specifies the name of the generated project. This will be the name of the resulting artifact and the project folder.|
-| `-Dversion`          | Defines the version of the generated project. A common convention is MAJOR.MINOR-SNAPSHOT, like `1.0-SNAPSHOT`, where SNAPSHOT denotes that the project is still in development.|
+| `archetypeGroupId` | The group ID of the archetype is `com.webforj` for webforJ archetypes.`.|
+| `archetypeArtifactId` | Specifies the name of the archetype to use. |
+| `archetypeVersion` | Specifies the version of the archetype you want to use. This ensures that the generated project is compatible with a specific version of the archetype.|
+| `groupId`          | Represents the namespace for the generated project. Typically structured like a Java package, such as `org.example` and is used to uniquely identify your organization or project domain.|
+| `artifactId`       | Specifies the name of the generated project. This will be the name of the resulting artifact and the project folder.|
+| `version`          | Defines the version of the generated project. A common convention is MAJOR.MINOR-SNAPSHOT, like `1.0-SNAPSHOT`, where SNAPSHOT denotes that the project is still in development.|
 
 
 After running the command, Maven will generate the project files necessary to run the project.
