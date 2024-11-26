@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdwcj_documentation=self.webpackChunkdwcj_documentation||[]).push([[2634],{192:(t,e,n)=>{n.r(e),n.d(e,{default:()=>u});n(6540);var c=n(6347),d=n(4848);function u(){return(0,d.jsx)(c.rd,{to:"/docs/getting-started/overview"})}}}]);

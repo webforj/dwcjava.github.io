@@ -2,18 +2,79 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://documentation.webforj.com/blog</id>
     <title>webforJ Documentation Blog</title>
-    <updated>2024-10-14T00:00:00.000Z</updated>
+    <updated>2024-11-25T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://documentation.webforj.com/blog"/>
     <subtitle>webforJ Documentation Blog</subtitle>
     <icon>https://documentation.webforj.com/img/webforj_icon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[What's new in version 24.20?]]></title>
+        <id>https://documentation.webforj.com/blog/whats-new-v24.20</id>
+        <link href="https://documentation.webforj.com/blog/whats-new-v24.20"/>
+        <updated>2024-11-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Get to know the features, fixes, and functionality new in webforJ version 24.20.]]></summary>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.20-165524f8e713e832d76459004c8f1a98.png" width="1200" height="630" class="img_ev3q"></p>
+<p>webforJ version <code>24.20</code> is live and available for development. Learn more about what main features and fixes are included in this release.</p>
+<p>As always, see the <a href="https://github.com/webforj/webforj/releases/tag/24.20" target="_blank" rel="noopener noreferrer">GitHub release overview</a> for a more comprehensive list of changes. Highlighted below are some of the most exciting changes:</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features-and-enhancements-">New features and enhancements 🎉<a href="https://documentation.webforj.com/blog/whats-new-v24.20#new-features-and-enhancements-" class="hash-link" aria-label="Direct link to New features and enhancements 🎉" title="Direct link to New features and enhancements 🎉">​</a></h2>
+<p>We’re excited to introduce version <code>24.20</code> which brings a game-changing update to webforJ - the shift to <strong>WAR deployment</strong>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="war-deployment-in-webforj">WAR Deployment in webforJ<a href="https://documentation.webforj.com/blog/whats-new-v24.20#war-deployment-in-webforj" class="hash-link" aria-label="Direct link to WAR Deployment in webforJ" title="Direct link to WAR Deployment in webforJ">​</a></h3>
+<p>In <code>24.20</code>, webforJ fully embraces the WAR (Web Application Archive) pattern for packaging and deploying apps. WAR files are a tried-and-true standard in Java development, bundling everything your app needs - code, resources, and dependencies - into a single, deployable archive.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="updating-your-project-for-war-deployment">Updating your project for WAR deployment<a href="https://documentation.webforj.com/blog/whats-new-v24.20#updating-your-project-for-war-deployment" class="hash-link" aria-label="Direct link to Updating your project for WAR deployment" title="Direct link to Updating your project for WAR deployment">​</a></h3>
+<p>Switching your project to use WAR deployment in webforJ is straightforward. To do so, ensure the following components are in place:</p>
+<ol>
+<li><strong>Include the Maven Jetty Plugin</strong>:</li>
+</ol>
+<p>Add the Maven Jetty plugin to your pom.xml to handle the deployment process. The Jetty plugin allows you to package and deploy your app as a WAR file effortlessly.</p>
+<div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">plugin</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.eclipse.jetty</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">jetty-maven-plugin</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">11.0.15</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">plugin</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Replacing the webforJ install plugin</div><div class="admonitionContent_BuS1"><p>In projects using the webforJ install plugin, remove this plugin from your POM to ensure that it isn't triggered when running <code>mvn install</code>.</p></div></div>
+<ol start="2">
+<li><strong>Add the required configuration and resources:</strong></li>
+</ol>
+<p>Include the following essential files in your project to ensure it runs as a WAR:</p>
+<ul>
+<li>
+<p><code>webapp/WEB-INF/web.xml</code>:
+Defines the app's deployment descriptor, specifying how the app should be deployed and managed by the server.</p>
+</li>
+<li>
+<p><code>resources/webforj.conf</code>:
+Centralized configuration file for customizing your app's behavior.</p>
+</li>
+<li>
+<p><code>resources/certificate.bls</code>:
+A license certificate file required to run your app. You’ll receive this file when registering for a license.</p>
+</li>
+<li>
+<p><code>resources/blsclient.conf</code>:
+Configuration file for license properties.</p>
+</li>
+</ul>
+<p>Once added, an example project structure may look like this:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">src/main/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    java/                      </span><span class="token comment" style="color:#999988;font-style:italic"># Java source files</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    resources/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        webforj.conf           </span><span class="token comment" style="color:#999988;font-style:italic"># App configuration</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        blsclient.conf         </span><span class="token comment" style="color:#999988;font-style:italic"># License configuration</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        certificate.bls        </span><span class="token comment" style="color:#999988;font-style:italic"># License certificate</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    webapp/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        WEB-INF/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            web.xml            </span><span class="token comment" style="color:#999988;font-style:italic"># Deployment descriptor</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="configuration-with-webforjconf">Configuration with <code>webforj.conf</code><a href="https://documentation.webforj.com/blog/whats-new-v24.20#configuration-with-webforjconf" class="hash-link" aria-label="Direct link to configuration-with-webforjconf" title="Direct link to configuration-with-webforjconf">​</a></h3>
+<p>The <code>webforj.conf</code> file centralizes app configuration in HOCON format. With this file, you can tweak key settings for your app, such as the app's entry point, and whether or not to run in <code>DEBUG</code> mode.</p>
+<p>Here are some of the most useful settings you can define in <code>webforj.conf</code>:</p>
+<table><thead><tr><th><strong>Property</strong></th><th><strong>Description</strong></th><th><strong>Default</strong></th></tr></thead><tbody><tr><td><code>webforj.entry</code></td><td>The fully qualified name of the class that extends <code>App</code>, acting as the entry point for your app.</td><td><em>Not Set</em></td></tr><tr><td><code>webforj.debug</code></td><td>Enables debug mode, showing detailed errors in the browser and printing debug logs to the console.</td><td><code>false</code></td></tr><tr><td><code>webforj.reloadOnServerError</code></td><td>Automatically reloads the app if the server temporarily becomes unavailable during development.</td><td><code>on</code></td></tr><tr><td><code>webforj.clientHeartbeatRate</code></td><td>Sets the interval for client pings to the server to query availability. Use shorter intervals in development and longer ones in production.</td><td><code>50s</code></td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="configuring-the-webxml-file">Configuring the <code>web.xml</code> file<a href="https://documentation.webforj.com/blog/whats-new-v24.20#configuring-the-webxml-file" class="hash-link" aria-label="Direct link to configuring-the-webxml-file" title="Direct link to configuring-the-webxml-file">​</a></h3>
+<p>The <code>web.xml</code> file is a crucial part of Java web app deployment, serving as the deployment descriptor for your app. In webforJ, it defines key settings like the servlet configuration and URL mappings. This file must be located in the <code>WEB-INF</code> directory of your project’s deployment structure.</p>
+<table><thead><tr><th><strong>Setting</strong></th><th><strong>Explanation</strong></th><th><strong>Default Value</strong></th></tr></thead><tbody><tr><td><code>&lt;display-name&gt;</code></td><td>Sets the display name for the web app, typically derived from the project name. This name appears in app servers' management consoles.</td><td><code>${project.name}</code></td></tr><tr><td><code>&lt;servlet&gt;</code> and <code>&lt;servlet-mapping&gt;</code></td><td>Defines the <code>WebforjServlet</code>, the core servlet for handling webforJ requests. This servlet is mapped to all URLs (<code>/*</code>), making it the main entry point for web requests.</td><td><code>WebforjServlet</code></td></tr><tr><td><code>&lt;load-on-startup&gt;</code></td><td>Specifies that <code>WebforjServlet</code> should be loaded when the app starts. Setting this to <code>1</code> ensures the servlet loads immediately, improving initial request handling.</td><td><code>1</code></td></tr></tbody></table>
+<p>To learn more about the various configuration options available, as well as other options for configuring your webforJ project, browse <a href="https://documentation.webforj.com/docs/configuration/overview">this article</a> detailing configuration in webforJ.</p>]]></content>
+        <author>
+            <name>webforJ Team</name>
+            <uri>https://github.com/webforj</uri>
+        </author>
+        <category label="webforJ" term="webforJ"/>
+        <category label="v24.20" term="v24.20"/>
+        <category label="release" term="release"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[What's new in version 24.12?]]></title>
         <id>https://documentation.webforj.com/blog/whats-new-v24.12</id>
         <link href="https://documentation.webforj.com/blog/whats-new-v24.12"/>
         <updated>2024-10-14T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Get to know the features, fixes, and functionality new in webforJ version 24.12.]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.12-133d292ae5e24e510600fd7fd7e96fcf.png" width="1200" height="630" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.12-133d292ae5e24e510600fd7fd7e96fcf.png" width="1200" height="630" class="img_ev3q"></p>
 <p>webforJ version <code>24.12</code> is live and available for development. Learn more about what main features and fixes are included in this release.</p>
 <p>As always, see the <a href="https://github.com/webforj/webforj/releases/tag/24.12" target="_blank" rel="noopener noreferrer">GitHub release overview</a> for a more comprehensive list of changes. Highlighted below are some of the most exciting changes:</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="breaking-changes-">Breaking changes 🛠<a href="https://documentation.webforj.com/blog/whats-new-v24.12#breaking-changes-" class="hash-link" aria-label="Direct link to Breaking changes 🛠" title="Direct link to Breaking changes 🛠">​</a></h2>
@@ -49,7 +110,7 @@
         <link href="https://documentation.webforj.com/blog/whats-new-v24.11"/>
         <updated>2024-09-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Get to know the features, fixes, and functionality new in webforJ version 24.11.]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.11-27ceaff470aac8ca2a78e302aa308615.png" width="1200" height="630" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.11-27ceaff470aac8ca2a78e302aa308615.png" width="1200" height="630" class="img_ev3q"></p>
 <p>webforJ version 24.11 is live and available for development. Learn more about what main features and fixes are included in this release.</p>
 <p>As always, see the <a href="https://github.com/webforj/webforj/releases/tag/24.11" target="_blank" rel="noopener noreferrer">GitHub release overview</a> for a more comprehensive list of changes. Highlighted below are some of the most exciting changes:</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features-and-enhancements-">New features and enhancements 🎉<a href="https://documentation.webforj.com/blog/whats-new-v24.11#new-features-and-enhancements-" class="hash-link" aria-label="Direct link to New features and enhancements 🎉" title="Direct link to New features and enhancements 🎉">​</a></h2>
@@ -103,7 +164,7 @@
         <link href="https://documentation.webforj.com/blog/whats-new-24.10"/>
         <updated>2024-07-23T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Get to know the features, fixes, and functionality new in webforJ version 24.10.]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.10-8bbcdf51019e98585ee59e169050bdce.png" width="1200" height="630" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.10-8bbcdf51019e98585ee59e169050bdce.png" width="1200" height="630" class="img_ev3q"></p>
 <p>webforJ version 24.10 is live and available for development. Learn more about what main features and fixes are included in this release.</p>
 <p>As always, see the <a href="https://github.com/webforj/webforj/releases/tag/24.10" target="_blank" rel="noopener noreferrer">GitHub release overview</a> for a more comprehensive list of changes.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features-and-enhancements-">New features and enhancements 🎉<a href="https://documentation.webforj.com/blog/whats-new-24.10#new-features-and-enhancements-" class="hash-link" aria-label="Direct link to New features and enhancements 🎉" title="Direct link to New features and enhancements 🎉">​</a></h2>
@@ -189,7 +250,7 @@
         <link href="https://documentation.webforj.com/blog/whats-new-24.02"/>
         <updated>2024-06-03T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Get to know the features, fixes and functionality new in webforJ version 24.02.]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.02-d13a125f23cbe488e69d2f2b9ca91700.png" width="1200" height="630" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.02-d13a125f23cbe488e69d2f2b9ca91700.png" width="1200" height="630" class="img_ev3q"></p>
 <p>webforj version 24.02 is live and available for development. Learn more about what main features and fixes are included in this release.</p>
 <p>As always, see the <a href="https://github.com/webforj/webforj/releases/tag/24.01" target="_blank" rel="noopener noreferrer">GitHub release overview</a> for a more comprehensive list of changes.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="option-dialogs">Option dialogs<a href="https://documentation.webforj.com/blog/whats-new-24.02#option-dialogs" class="hash-link" aria-label="Direct link to Option dialogs" title="Direct link to Option dialogs">​</a></h2>
@@ -246,7 +307,7 @@
         <link href="https://documentation.webforj.com/blog/whats-new-24.01"/>
         <updated>2024-04-26T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Get to know the features, fixes and functionality new in webforJ version 24.01.]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.01-eeaebd4b2694c076c5f84f2766eb0478.png" width="1200" height="630" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.01-eeaebd4b2694c076c5f84f2766eb0478.png" width="1200" height="630" class="img_ev3q"></p>
 <p>webforj version <code>24.01</code> is live and available for development. Learn more about what main features and fixes are included in this release.</p>
 <p>As always, see the <a href="https://github.com/webforj/webforj/releases/tag/24.01" target="_blank" rel="noopener noreferrer">GitHub release overview</a> for a more comprehensive list of changes.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-data-binding-feature-in-webforj">New data binding feature in webforJ<a href="https://documentation.webforj.com/blog/whats-new-24.01#new-data-binding-feature-in-webforj" class="hash-link" aria-label="Direct link to New data binding feature in webforJ" title="Direct link to New data binding feature in webforJ">​</a></h2>
@@ -297,7 +358,7 @@
         <link href="https://documentation.webforj.com/blog/whats-new-24.00"/>
         <updated>2024-04-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Get to know the features, fixes and functionality new in webforJ version 24.00.]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.00-6276bd6dfe642e375fac78b946e5b579.png" width="1200" height="630" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.00-6276bd6dfe642e375fac78b946e5b579.png" width="1200" height="630" class="img_ev3q"></p>
 <p>webforj version <code>24.00</code> is live and available for development. Learn more about what main features and fixes are included in this release.</p>
 <p>See the <a href="https://github.com/webforj/webforj/releases/tag/24.00" target="_blank" rel="noopener noreferrer">GitHub release overview</a> for a more comprehensive list of changes.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="table-component">Table component<a href="https://documentation.webforj.com/blog/whats-new-24.00#table-component" class="hash-link" aria-label="Direct link to Table component" title="Direct link to Table component">​</a></h2>

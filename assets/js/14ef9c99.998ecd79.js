@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdwcj_documentation=self.webpackChunkdwcj_documentation||[]).push([[6027],{2584:e=>{e.exports=JSON.parse('{"label":"webforJ","permalink":"/blog/tags/webfor-j","allTagsPath":"/blog/tags","count":6,"unlisted":false}')}}]);
