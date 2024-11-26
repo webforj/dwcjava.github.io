@@ -114,7 +114,7 @@ private Button btn = new Button("Say Hello");
 ```
 
 - `self`: The main layout component using [`FlexLayout`](../components/flex-layout), configured as a container for the elements. This element uses the `getBoundComponent()` method to store the main `FlexLayout` the class contains.
-- `hello`: A [`TextField`](../components/fields/text-field) labeled `What is your name?` for users to input their name.
+- `hello`: A [`TextField`](../components/fields/textfield) labeled `What is your name?` for users to input their name.
 - `btn`: A primary-styled [`Button`](../components/button) labeled `Say Hello`.
 
 ### Layout configuration
