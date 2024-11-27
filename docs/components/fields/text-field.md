@@ -27,13 +27,17 @@ The `TextField` is suitable for a wide range of scenarios where text input or ed
 
 You can specify the type of the TextField using the `setType()` method. Similarly, you can retrieve the type using the `getType()` method, which will return an enum value.
 
-- `Type.TEXT`: This is the default value for a `TextField` and automatically removes line breaks from the input value
+- `Type.TEXT`: This is the default type for a `TextField` and automatically removes line breaks from the input value
 
-- `Type.EMAIL`: This configuration option is used for editing an email address. It has a relevant keyboard in supporting browsers and devices with dynamic keyboards.
+- `Type.EMAIL`: This type is for entering email addresses. It validates the input according to standard email syntax. Additionally, it provides compatible browsers and devices with a dynamic keyboard that simplifies the typing process by including commonly used keys like <kbd>.com</kbd> and <kbd>@</kbd>.
 
-- `Type.TEL`: This option is used for entering a telephone number. The field will display a telephone keypad in some devices with dynamic keypads.
+  :::note
+  While this validation confirms the email address's format, it doesn't guarantee that the email exists.
+  :::
 
-- `Type.URL`: A field for entering a URL. It has a relevant keyboard in supporting browsers and devices with dynamic keyboards.
+- `Type.TEL`: This type is used for entering a telephone number. The field will display a telephone keypad in some devices with dynamic keypads.
+
+- `Type.URL`: This type is for entering URLs. It validates if a user entered a URL that includes a scheme and a domain name, for exmample: https://webforj.com. Additionally, it provides compatible browsers and devices with a dynamic keyboard that simplifies the typing process by including commonly used keys like and <kbd>:</kbd>, <kbd>/</kbd>, and <kbd>.com</kbd>.
 
 - `Type.SEARCH`: A single-line text field for entering search strings. Line-breaks are automatically removed from the input value.
 
