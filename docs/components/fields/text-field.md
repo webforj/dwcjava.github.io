@@ -37,7 +37,7 @@ You can specify the type of the TextField using the `setType()` method. Similarl
 
 - `Type.TEL`: This type is used for entering a telephone number. The field will display a telephone keypad in some devices with dynamic keypads.
 
-- `Type.URL`: This type is for entering URLs. It validates if a user entered a URL that includes a scheme and a domain name, for exmample: https://webforj.com. Additionally, it provides compatible browsers and devices with a dynamic keyboard that simplifies the typing process by including commonly used keys like and <kbd>:</kbd>, <kbd>/</kbd>, and <kbd>.com</kbd>.
+- `Type.URL`: This type is for entering URLs. It validates if a user enters a URL that includes a scheme and a domain name, for example: https://webforj.com. Additionally, it provides compatible browsers and devices with a dynamic keyboard that simplifies the typing process by including commonly used keys like <kbd>:</kbd>, <kbd>/</kbd>, and <kbd>.com</kbd>.
 
 - `Type.SEARCH`: A single-line text field for entering search strings. Line-breaks are automatically removed from the input value.
 
