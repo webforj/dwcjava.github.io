@@ -72,7 +72,7 @@ private void processCommand(Terminal terminal, String command) {
     terminal.write("$ ");
 }
 ```
-In this setup, the commands `time`, `clear`, and `help` are predefined, and handles unrecognized commands with an error message.
+This setup defines the commands `time`, `clear`, and `help`, and handles unrecognized commands with an error message.
 
 ## Styling
 
