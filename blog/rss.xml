@@ -336,7 +336,7 @@ Configuration file for license properties.</p>
             <pubDate>Mon, 08 Apr 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Get to know the features, fixes and functionality new in webforJ version 24.00.]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="cover image" src="https://documentation.webforj.com/assets/images/24.00-6276bd6dfe642e375fac78b946e5b579.png" width="1200" height="630" class="img_ev3q"></p>
-<p>webforj version <code>24.00</code> is live and available for development. Learn more about what main features and fixes are included in this release.</p>
+<p>webforJ version <code>24.00</code> is live and available for development. Learn more about what main features and fixes are included in this release.</p>
 <p>See the <a href="https://github.com/webforj/webforj/releases/tag/24.00" target="_blank" rel="noopener noreferrer">GitHub release overview</a> for a more comprehensive list of changes.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="table-component">Table component<a href="https://documentation.webforj.com/blog/whats-new-24.00#table-component" class="hash-link" aria-label="Direct link to Table component" title="Direct link to Table component">​</a></h2>
 <p>This release introduces a new <a href="https://documentation.webforj.com/docs/components/table" target="_blank" rel="noopener noreferrer"><code>Table</code> component</a>, allowing developers access to a lightweight, fast and optimized way to display their data.</p>
