@@ -94,9 +94,9 @@ appNav.onLocationChanged(event -> {
 
 The `AppNavItem` component provides the `setTarget()` method, which allows you to control the behavior of each navigation item when it's clicked. By default, items open in the current browsing context, but you can customize this with the `NavigationTarget` options:
 
-- **SELF (Default)**: Opens in the current browsing context.
-- **BLANK**: Opens the item in a new tab (or new window, based on browser settings).
-- **PARENT**: Opens in the parent browsing context. If there’s no parent, it behaves like SELF.
+- **SELF**: This is the default option and opens in the current browsing context.
+- **BLANK**: Opens the item in a new tab or window based on browser settings.
+- **PARENT**: Opens in the parent browsing context; if there’s no parent, it behaves like SELF.
 - **TOP**: Opens in the top-level browsing context. If there’s no higher-level context, it also behaves like SELF.
 
 ```java
@@ -122,14 +122,14 @@ appNav.setAutoOpen(true); // Automatically opens selected groups
 ```
 ## Styling
 
-### Shadow Parts
+### Shadow parts
 
 These are the various parts of the [shadow DOM](../glossary#shadow-dom) for the `AppNavItem` component, which will be required when styling via CSS is desired.
 
 <TableBuilder tag={require('@site/docs/components/_dwc_control_map.json').AppNavItem} table='parts' exclusions=''/>
 
 
-### Reflected Attributes
+### Reflected attributes
 
 The reflected attributes of a `AppNavItem` component will be shown as attributes in the rendered HTML element for the component in the DOM. This means that styling can be applied using these attributes.
 
