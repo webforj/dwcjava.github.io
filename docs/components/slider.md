@@ -158,7 +158,7 @@ slider.setLabelsVisible(false); // Hide labels
 
 ## Tooltips
 
-Tooltips enhance usability by displaying the `Slider`’s value directly above the knob, helping users make more precise adjustments. You can configure the tooltip’s behavior, visibility, and format to suit your needs.
+Tooltips enhance usability by displaying the `Slider`’s value directly below the knob, helping users make more precise adjustments. You can configure the tooltip’s behavior, visibility, and format to suit your needs.
 
 To enable tooltips, use the `setTooltipVisible()` method. By default, tooltips are disabled:
 
