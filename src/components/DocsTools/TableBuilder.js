@@ -18,6 +18,10 @@ import exclusions from '@site/static/exclusions.json';
 export default function TableBuilder(props) {
   const [componentData, setComponentData] = useState(null);
   const shadowDomLink = '/docs/glossary#shadow-dom';
+  // headerClasses are the correct classes to give headers in Docusaurus to make sure
+  // they are styled correctly and show up in the correct location when you click a 
+  // TOC entry. This value may need to change sometimes.
+  const headerClasses = "anchor anchorWithStickyNavbar_LWe7";
   const componentExclusions = exclusions[props.name.toLowerCase()];
 
   // If the name isn't in the controlMap, we just use the name as-is. 
@@ -65,6 +69,7 @@ export default function TableBuilder(props) {
     type: prop.type,
   }));
   const dependencies = componentData?.dependencies || [];
+
 
   const renderTable = (table) => {
     let items, headers, sectionHeading, sectionDescription;
@@ -140,10 +145,13 @@ export default function TableBuilder(props) {
       return null;
     }
 
+    // Now that we know there is content for this section, add to the mini TOC
+    addTocEntry(sectionHeading);
+
     if (table == "dependencies"){
       return (
         <>
-        <h3>{sectionHeading}</h3>
+        <h3 class={headerClasses} id={sectionHeading}>{sectionHeading}</h3>
         <p>{sectionDescription}</p>
         <ul>
           {dependencies.map((dependency) => {
@@ -163,7 +171,7 @@ export default function TableBuilder(props) {
 
     return (
       <>
-      <h3>{sectionHeading}</h3>
+      <h3 class={headerClasses} id={sectionHeading}>{sectionHeading}</h3>
       <p>{sectionDescription}</p>
       <table className="custom--table" key={table}>
         <thead>
@@ -238,4 +246,36 @@ function formatText(text) {
     );
   });
 
+}
+
+/**
+ * addTocEntry adds an entry in the mini TOC for the specified section.
+ * "entry" should be the content and ID of the heading.
+ * addTocEntry will only add to the TOC if it already exists.
+ * @param {string} entry 
+ * @returns 
+ */
+function addTocEntry(entry) {
+    const tocContainer = document.querySelector('.table-of-contents');
+    if (!tocContainer) return;
+
+    const existingEntry = tocContainer.querySelector(`a[href$="#${entry}"]`);
+    if (existingEntry) return;
+    
+    // Find the "Styling" portion of the TOC
+    const stylingListItem = Array.from(tocContainer.querySelectorAll('li a'))
+      .find(a => a.textContent.trim() === 'Styling')
+      ?.closest('li');
+    
+    // Get <ul> element it has one, if not, create one.
+    const stylingSubList = stylingListItem.querySelector('ul') || stylingListItem.appendChild(document.createElement('ul'));
+
+    const link = document.createElement('a');
+    // Todo: convert entry to a better "id" type value
+    link.href = '#' + entry;
+    link.textContent = entry;
+    link.className = 'table-of-contents__link toc-highlight';
+    const listItem = document.createElement('li');
+    listItem.appendChild(link);
+    stylingSubList.appendChild(listItem);
 }
