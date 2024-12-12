@@ -16,5 +16,7 @@ import FiberSmartRecordIcon from '@mui/icons-material/FiberSmartRecord';
 This section outlines styling information for the **`<dwc-button>`** component. This component is **client side only** - it cannot be instantiated on its own via the API, but may make up part of API components.
 :::
 
+## Styling
+
 <TableBuilder name="dwc-button" />
 
