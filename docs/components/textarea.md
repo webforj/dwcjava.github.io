@@ -24,9 +24,9 @@ height = '200px'
 
 ## Managing paragraphs
 
-The `TextArea` component provides features for handling text paragraphs, making it ideal for applications that require document editing or structured text input. Each method offers specific functionality to manipulate paragraphs dynamically and efficiently.
+The `TextArea` component provides features for handling text paragraphs, making it ideal for applications that require document editing or structured text input.
 
-### Adding Paragraphs
+### Adding paragraphs
 
 The `addParagraph()` method allows you to add paragraphs to the `TextArea`. You can insert a paragraph at a specific position or append it to the end of the text.
 
@@ -56,7 +56,7 @@ textArea.addParagraph("Paragraph 3");
 // Remove the second paragraph
 textArea.removeParagraph(1);
 ```
-This demo showcases paragraph management functionality within a `TextArea`, allowing users to dynamically add or remove paragraphs at specified positions:
+This demo showcases paragraph management capability within a `TextArea`, allowing users to dynamically add or remove paragraphs at specified positions:
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/textareaparagraphmanager?' 
@@ -110,8 +110,8 @@ height = '250px'
 The `maxLength` property allows you to define the total number of characters a user can enter. This ensures that input remains concise and within acceptable limits, making it particularly useful for fields like usernames, descriptions, or other constrained text inputs. On the other hand, the `minLength` property enforces a baseline character count, ensuring that users provide enough information before proceeding. This is ideal for fields requiring a minimum level of detail, such as feedback forms or comments.
 
 :::tip Key Difference
-- **Line Count and Paragraph Length**: These focus on structuring text visually. setLineCountLimit() restricts the number of lines, while setParagraphLengthLimit() limits characters per line, wrapping text if necessary.
-- **Maximum and Minimum Length**: These focus on content validation. setMaxLength() and setMinLength() control the total number of characters allowed in the TextArea across all lines.
+- **Line Count and Paragraph Length**: These focus on structuring text visually. `setLineCountLimit()` restricts the number of lines, while `setParagraphLengthLimit()` limits characters per line, wrapping text if necessary.
+- **Maximum and Minimum Length**: These focus on content validation. `setMaxLength()` and `setMinLength()` control the total number of characters allowed in the TextArea across all lines.
 :::
 
 ## Word wrap and line wrapping 
@@ -144,7 +144,7 @@ height = '125px'
 
 ## Placeholder text
 
-Placeholder text is also supported by webforJ's `TextArea`, which provides users with contextual hints about the type of input expected. This text is displayed within the `TextArea` when it is empty and disappears as the user begins typing.
+Placeholder text is also supported by webforJ's `TextArea`, which provides users with contextual hints about the type of input expected. This text is displayed within the `TextArea` when it's empty and disappears as the user begins typing.
 
 ```java
 TextArea textArea = new TextArea("Feedback", "", "Enter your feedback here...");
@@ -152,7 +152,7 @@ TextArea textArea = new TextArea("Feedback", "", "Enter your feedback here...");
 
 ## Scroll bars and selection ranges
 
-To enhance usability and navigation within the `TextArea`, scroll bars and selection ranges provide essential functionality for handling large volumes of text efficiently.
+To enhance usability and navigation within the `TextArea`, scroll bars and selection ranges provide essential capabilities for handling large volumes of text efficiently.
 
 - **Scroll Bars**: The `TextArea` supports both horizontal and vertical scroll bars, ensuring users can navigate content seamlessly. Horizontal scrolling is ideal for lines exceeding the component’s width, while vertical scrolling accommodates lengthy text. Developers can enable these scroll bars using the `setHorizontalScroll()` and `setVerticalScroll()` methods, providing flexibility for different layout requirements and content types.
 
