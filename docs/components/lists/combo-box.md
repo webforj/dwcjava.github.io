@@ -2,34 +2,22 @@
 sidebar_position: 2
 title: ComboBox
 slug: combobox
+description: A component that combines a dropdown list with an editable text input, allowing users to either select an option from the list or enter a custom value.
 ---
 
 <DocChip chip='shadow' />
-
 <DocChip chip='name' label="dwc-combobox" />
-
 <JavadocLink type="foundation" location="com/webforj/component/list/ComboBox" top='true'/>
 
-<ParentLink parent="List" />
+<ParentLink parent="list" />
 
-The `ComboBox` component is a user interface element designed to present users with a list of options or choices, as well as a field for entering their own custom values. Users can select a single option from this list, typically by clicking the `ComboBox`, which triggers the display of a dropdown list containing available choices, or type in a custom value. Users can also interact with the `ComboBox` with the arrow keys. When a user makes a selection, the chosen option is then displayed in the `ComboBox`. 
+The `ComboBox` component is designed to offer users a list of options along with a field for entering custom values. This versatile input seamlessly combines the functionalities of a dropdown list and a text input field, allowing users to either select a single option from the dropdown or enter in their own value as needed.
 
-## Usages
+You can include a `ComboBox` in your app for various purposes, such as for selecting a tag, picking an event location, or even conducting product searches on e-commerce sites. Essentially, the `ComboBox` lets you provide users with a set of predefined values while still allowing them to enter their own input when necessary.
 
-The ComboBox component is a versatile input element that combines the features of both a dropdown list and a text input field. It allows users to select items from a predefined list or enter custom values as needed. This section explores common usages of the ComboBox component in various scenarios:
-
-1. **Product Search and Entry**: Use a ComboBox to implement a product search and entry feature. Users can either select a product from a predefined list or type in a custom product name. This is helpful for applications like e-commerce sites where products are vast and diverse.
-
-2. **Tag Selection and Entry**: In applications involving content tagging, a ComboBox can serve as an excellent choice. Users can select from a list of existing tags or add custom tags by typing them. This is useful for organizing and categorizing content. Examples of such tags include:
-    >- Project Labels: In a project management tool, users can select labels or tags (e.g., "Urgent," "In Progress," "Completed") to categorize tasks or projects, and they can create custom labels as needed.
-    >- Recipe Ingredients:  In a cooking or recipe app, users can select ingredients from a list (e.g., "Tomatoes," "Onions," "Chicken") or add their own ingredients for custom recipes.
-    >- Location Tags:  In a mapping or geotagging application, users can choose predefined location tags (e.g., "Beach," "City," "Park") or create custom tags to mark specific places on a map.
-
-3. **Data Entry with Suggested Values**: In data entry forms, a ComboBox can be used to speed up input by providing a list of suggested values based on user input. This helps users enter data accurately and efficiently.
-
-    :::tip
-    The `ComboBox` should be used when users are allowed to enter custom values. If only preset values are desired, use a [`ChoiceBox`](./choice-box.md) instead.
-    :::
+:::tip
+The `ComboBox` should be used when users are allowed to enter custom values. If only preset values are desired, use a [`ChoiceBox`](./choice-box.md). If you want to allow users to choose multiple selections, use a [`ListBox`](./list-box.md)
+:::
 
 ## Custom value
 
@@ -38,18 +26,16 @@ Changing the custom value property allows control over whether or not a user is 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/comboboxcustomvalue?' 
 javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/lists/combobox/ComboBoxCustomValueView.java'
-javaC='https://raw.githubusercontent.com/webforj/ControlSamples/main/src/main/code_snippets/combobox/CustomValue.txt'
 height = '200px'
 />
 
 ## Placeholder
 
-A placeholder can be set for a `ComboBox` which will display in the text field of the component when it is empty to prompt users for the desired entry in the field. This can be done using the <JavadocLink type="foundation" location="com/webforj/component/list/ComboBox" code='true' suffix='#setPlaceholder(java.lang.String)'>setPlaceholder()</JavadocLink> method.
+You can prompt users with a desired entry in a `ComboBox` by setting a placeholder in the text field of the component when it's empty. This can be done using the <JavadocLink type="foundation" location="com/webforj/component/list/ComboBox" code='true' suffix='#setPlaceholder(java.lang.String)'>setPlaceholder()</JavadocLink> method.
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/comboboxplaceholder?' 
 javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/lists/combobox/ComboBoxPlaceholderView.java'
-javaC='https://raw.githubusercontent.com/webforj/ControlSamples/main/src/main/code_snippets/combobox/Placeholder.txt'
 height = '200px'
 />
 
@@ -60,12 +46,11 @@ Using the <JavadocLink type="foundation" location="com/webforj/component/list/Dw
 This detachment creates a situation where directly targeting the
 dropdown using CSS or shadow part selectors from the parent component becomes challenging, unless you make use of the dropdown type attribute.
 
-In the demo below, the Dropdown type is set and used in the CSS file to select the dropdown and change the background color.
+Here's an example of using a Dropdown type in CSS to animate choices while hovering over them:
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/comboboxdropdowntype?' 
 javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/lists/combobox/ComboBoxDropdownTypeView.java'
-javaC='https://raw.githubusercontent.com/webforj/ControlSamples/main/src/main/code_snippets/combobox/DropdownType.txt'
 cssURL='https://raw.githubusercontent.com/webforj/ControlSamples/main/src/main/resources/css/lists/combobox/comboBoxDropDownType.css'
 height='250px'
 />
@@ -74,14 +59,13 @@ height='250px'
 
 By default, the number of rows displayed in the dropdown of a `ComboBox` will be increased to fit the content. However, using the <JavadocLink type="foundation" location="com/webforj/component/list/DwcSelectDropdown" code='true' suffix='#setMaxRowCount(int)'>setMaxRowCount()</JavadocLink> method allows for control over how many items are displayed.
 
-:::caution
-Using a number that is less than or equal to 0 will result in unsetting this property.
+:::tip
+When a number less than or equal to zero is used, the number of rows will automatically adjust to accommodate the content.
 :::
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/comboboxmaxrow?' 
 javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/lists/combobox/ComboBoxMaxRowView.java'
-javaC='https://raw.githubusercontent.com/webforj/ControlSamples/main/src/main/code_snippets/combobox/MaxRow.txt'
 height='450px'
 />
 
@@ -178,14 +162,10 @@ This component relies on the following components - see the related article for 
 
 To ensure an optimal user experience when using the `ComboBox` component, consider the following best practices:
 
-1. **Preload Common Values**: If there are common or frequently used items, preload them in the `ComboBox` list. This speeds up selection for commonly chosen items and encourages consistency.
+- **Preload Common Values**: If there are common or frequently used items, preload them in the `ComboBox` list. This speeds up selection for commonly chosen items and encourages consistency.
 
-2. **User-Friendly Labels**: Ensure that the displayed labels for each option are user-friendly and self-explanatory. Make sure users can easily understand the purpose of each choice.
+- **Clear Options**: Make the text for each `ListItem` clear and simple so users immediately understand their purpose.
 
-3. **Validation**: Implement input validation to handle custom entries. Check for data accuracy and consistency. You may want to suggest corrections or confirmations for ambiguous entries.
+- **Validation**: Implement input validation to handle custom entries. Check for data accuracy and consistency. You may want to suggest corrections or confirmations for ambiguous entries.
 
-4. **Default Selection**: Set a default selection, especially if there is a common or recommended choice. This enhances the user experience by reducing the need for extra clicks.
-
-5. **ComboBox vs. Other List Components**: A `ComboBox` is the best choice if you need a single input from the user and you wish to provide them with predetermined choices and the ability to customize their input. Another list component may be better if you need the following behaviors:
-    - Multiple Selection and display all items at once: [ListBox](./list-box.md)
-    - Prevent custom input: [ChoiceBox](./choice-box.md)
+- **Default Selection**: Reduce the need for extra clicks by setting a default selection, especially if there is a common or recommended choice.
