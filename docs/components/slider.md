@@ -49,6 +49,7 @@ Integer value = slider.getValue();
 System.out.println("The slider is currently at: " + value);
 ```
 
+
 ## Minimum and maximum values
 
 The minimum and maximum values define the allowable range of the `Slider`, determining the boundaries within which the `Slider` knob can move. By default, the range is set from 0 to 100, but you can customize these values to suit your needs.
@@ -100,12 +101,12 @@ To ensure the `Slider` knob aligns with the nearest tick mark during user intera
 slider.setSnapToTicks(true); // Enable snapping
 ```
 
-Here’s an example of a fully configured `Slider` showing major and minor tick settings along with snapping for precise adjustments:
+Here’s an example of a fully configured `Slider` showing major and minor tick settings along with snapping functionality for precise adjustments:
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/slidertick?' 
-javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderTickView.java'
-height = '100px'
+javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderTickView.java'  
+height = '300px'
 />
 
 ## Orientation
@@ -123,7 +124,7 @@ It's also possible to invert a `Slider`. By default, the minimum value of a vert
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/sliderinversion?' 
 javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderInversionView.java'
-height = '300px'
+height = '150px'
 />
 
 ## Labels
@@ -135,7 +136,7 @@ Here is an example that demonstrates how labels can be applied to different `Sli
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/sliderlabel?' 
 javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderLabelView.java'
-height = '300px'
+height = '150px'
 />
 
 ### Default labels
@@ -158,7 +159,7 @@ slider.setLabelsVisible(false); // Hide labels
 
 ## Tooltips
 
-Tooltips enhance usability by displaying the `Slider`’s value directly below the knob, helping users make more precise adjustments. You can configure the tooltip’s behavior, visibility, and format to suit your needs.
+Tooltips enhance usability by displaying the `Slider`’s value directly above the knob, helping users make more precise adjustments. You can configure the tooltip’s behavior, visibility, and format to suit your needs.
 
 To enable tooltips, use the `setTooltipVisible()` method. By default, tooltips are disabled:
 
@@ -177,6 +178,12 @@ javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads
 height = '100px'
 />
 
+By default, tooltips display the `Slider`’s current value. To customize the tooltip text, use the `setTooltipText()` method. This method is ideal for cases where you want the tooltip to display static or descriptive text instead of dynamic values.
+
+```java
+slider.setTooltipText("Adjust the volume"); // Set a custom static tooltip
+slider.setTooltipVisible(true);
+```
 
 ## Themes
 
