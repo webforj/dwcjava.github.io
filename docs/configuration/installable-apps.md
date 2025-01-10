@@ -4,16 +4,18 @@ sidebar_position: 1
 ---
 
 The `@AppProfile` annotation in webforJ enables you to make your app installable on supported platforms. 
-Installable web apps provide a seamless experience by integrating with the device's operating system. 
+Installable web apps integrate seamlessly with the device's operating system. 
 When installed, they appear on the home screen or app menu, similar to native apps. 
-To achieve this, certain metadata—such as name, description, and icons must be provided. 
+To achieve this, certain metadata such as name, description, and icons must be provided. 
 These details help the operating system identify and display the app.
 
 :::info Secure Origin Requirement
-For an app to be installable, it must be served from a secure origin (i.e., `https`). 
+For an app to be installable, it must be served from a secure origin, such as `https`. 
 This requirement ensures that the app meets the security standards necessary for installation. However, this rule doesn't apply when serving the app locally from `localhost` during development.
 
+<!-- vale off -->
 For more details about secure contexts and their importance, refer to the [Secure Contexts MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts).
+<!-- vale on -->
 :::
 
 <div class="videos-container">
