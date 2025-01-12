@@ -84,6 +84,7 @@ Set the tick spacing using the following `setMajorTickSpacing()` and `setMinorTi
 slider.setMajorTickSpacing(10); // Major ticks every 10 units
 slider.setMinorTickSpacing(2);  // Minor ticks every 2 units
 ```
+
 ### Show or hide ticks
 
 You can toggle the visibility of tick marks using the `setTicksVisible()` method. By default, tick marks are hidden.
@@ -104,7 +105,7 @@ slider.setSnapToTicks(true); // Enable snapping
 Here’s an example of a fully configured `Slider` showing major and minor tick settings along with snapping functionality for precise adjustments:
 
 <ComponentDemo 
-path='https://demo.webforj.com/webapp/controlsamples/slidertick?' 
+path='https://demo.webforj.com/webapp/controlsamples/slidertickspacing?' 
 javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderTickView.java'  
 height = '300px'
 />
@@ -134,7 +135,7 @@ webforJ's `Slider` component provides options for adding labels to tick marks, m
 Here is an example that demonstrates how labels can be applied to different `Slider` configurations. This includes a `Slider` with no ticks, a `Slider` with labels applied to tick values, and a `Slider` with labels applied to non-tick values:
 
 <ComponentDemo 
-path='https://demo.webforj.com/webapp/controlsamples/sliderlabel?' 
+path='https://demo.webforj.com/webapp/controlsamples/sliderticknontick?' 
 javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderLabelView.java'
 height = '150px'
 />
@@ -147,6 +148,20 @@ By default, the `Slider` can display numeric labels that correspond to the value
 ### Custom labels
 
 You can replace the default labels with custom text using the `setLabels()` method. This is useful for providing more meaningful context for the slider values, such as labeling temperatures or dollar amounts.
+
+```java
+// Define custom labels
+Map<Integer, String> customLabels = Map.of(
+    0, "Cold",
+    25, "Cool",
+    50, "Moderate",
+    75, "Warm",
+    100, "Hot"
+);
+
+// Apply custom labels to the slider
+slider.setLabels(customLabels)
+```
 
 ### Show or hide labels
 
@@ -173,7 +188,7 @@ Tooltips can also be configured to appear only when the user interacts with the 
 Here’s an example of a fully configured `Slider` with tooltips:
 
 <ComponentDemo 
-path='https://demo.webforj.com/webapp/controlsamples/slidertemp?' 
+path='https://demo.webforj.com/webapp/controlsamples/slidertemp' 
 javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderTempView.java'
 height = '100px'
 />
