@@ -54,9 +54,9 @@ System.out.println("The slider is currently at: " + value);
 
 The minimum and maximum values define the allowable range of the `Slider`, determining the boundaries within which the `Slider` knob can move. By default, the range is set from 0 to 100, but you can customize these values to suit your needs.
 
-The intervals on the Slider have a default step of 1, meaning the number of intervals is determined by the range. For example:
-- A Slider with a range of 0 to 10 will have 10 intervals.
-- A Slider with a range of 0 to 100 will have 100 intervals.
+The intervals on the `Slider` have a default step of 1, meaning the number of intervals is determined by the range. For example:
+- A `Slider` with a range of 0 to 10 will have 10 intervals.
+- A `Slider` with a range of 0 to 100 will have 100 intervals.
 
 These intervals are evenly distributed along the slider track, with their spacing depending on the `Slider`’s dimensions.
 
@@ -130,7 +130,7 @@ height = '150px'
 
 ## Labels
 
-webforJ's `Slider` component provides options for adding labels to tick marks, making it easier for users to understand the values represented on the slider. Labels can be customized for specific tick values or toggled on and off based on the app's needs. 
+webforJ's `Slider` component provides options for adding labels to tick marks, making it easier for users to understand the values represented on the `Slider`. Labels can be customized for specific tick values or toggled on and off based on the app's needs. 
 
 Here is an example that demonstrates how labels can be applied to different `Slider` configurations. This includes a `Slider` with no ticks, a `Slider` with labels applied to tick values, and a `Slider` with labels applied to non-tick values:
 
