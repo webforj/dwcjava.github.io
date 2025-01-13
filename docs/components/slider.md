@@ -106,7 +106,7 @@ Here’s an example of a fully configured `Slider` showing major and minor tick 
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/slidertickspacing?' 
-javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderTickView.java'  
+javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderTickSpacingView.java'  
 height = '300px'
 />
 
@@ -136,7 +136,7 @@ Here is an example that demonstrates how labels can be applied to different `Sli
 
 <ComponentDemo 
 path='https://demo.webforj.com/webapp/controlsamples/sliderticknontick?' 
-javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderLabelView.java'
+javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderTickNonTickView.java'
 height = '150px'
 />
 
@@ -188,7 +188,7 @@ Tooltips can also be configured to appear only when the user interacts with the 
 Here’s an example of a fully configured `Slider` with tooltips:
 
 <ComponentDemo 
-path='https://demo.webforj.com/webapp/controlsamples/slidertemp' 
+path='https://demo.webforj.com/webapp/controlsamples/slidertemp?' 
 javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/slider/SliderTempView.java'
 height = '100px'
 />
