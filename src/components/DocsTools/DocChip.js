@@ -38,7 +38,11 @@ export default function DocChip( { chip, label, href, clickable, iconName, toolt
   } else if (chip === 'name') {
     // A "DOM Name" chip
     tooltipText="The name of this web component as it appears in the DOM.";
-    clickable = false;
+    clickable = true;
+    const overview = "https://docs.webforj.com/docs/client-components/overview#:~:text=";
+    const nameInDOM = label.replace(/-/g, "%2D");
+    href = overview.concat(nameInDOM);
+
     iconName = 'code';
   } else if (chip == 'scoped') {
     tooltipText = "This component uses scoped components, an alternative approach to the shadow DOM, a browser API that enables encapsulation. These components scope their styles to avoid leaks or conflicts instead of relying on the native shadow DOM.";
