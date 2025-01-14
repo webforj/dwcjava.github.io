@@ -39,9 +39,9 @@ export default function DocChip( { chip, label, href, clickable, iconName, toolt
     // A "DOM Name" chip
     tooltipText="The name of this web component as it appears in the DOM.";
     clickable = true;
-    const overview = "https://docs.webforj.com/docs/client-components/overview#:~:text=";
-    const nameInDOM = label.replace(/-/g, "%2D");
-    href = overview.concat(nameInDOM);
+    const path = "https://docs.webforj.com/docs/client-components/";
+    const clientPage = label.replace("dwc-", "");
+    href = path.concat(clientPage);
 
     iconName = 'code';
   } else if (chip == 'scoped') {
