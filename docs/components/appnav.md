@@ -112,9 +112,9 @@ AppNavItem topItem = new AppNavItem("Top View", "/top");
 topItem.setTarget(AppNavItem.NavigationTarget.TOP); // Opens in the top-level context
 ```
 
-## Item Prefix and Suffix
+## Item prefix and suffix
 
-The `AppNavItem` component allows you to customize its appearance and functionality by adding prefixes and suffixes. These are useful for enhancing the visual design or providing additional context, such as icons, badges, or other indicators, alongside the item's text.
+The `AppNavItem` component allows you to customize its appearance by adding prefixes and suffixes. These are useful for enhancing the visual design or providing additional context, such as icons, badges, or other indicators, alongside the item's text.
 
 - **Prefixes**: Add elements or icons to appear before the item's label. For example, you can use an icon to represent the item's purpose visually.
 
@@ -128,7 +128,7 @@ notificationsItem.setPrefix(new Icon(TablerIcon.BELL));
 notificationsItem.setSuffix(new Badge("3", Badge.Theme.INFO));
 ```
 
-Prefixes and suffixes improve clarity and provide additional functionality, ensuring a more intuitive user experience for your app's navigation.
+Prefixes and suffixes improve clarity, ensuring a more intuitive user experience for your app's navigation.
 
 ## Parts and CSS properties
 
