@@ -10,21 +10,56 @@ title: AppNav
 
 <JavadocLink type="appnav" location="com/webforj/component/appnav/AppNav" top='true'/> 
 
-The `AppNav` component in webforJ serves as a structured navigation container, designed to organize and display a list of navigation items within an app. This component is particularly useful for creating sidebars or menus, where users can click to navigate between different sections of an app. 
+The `AppNav` component in webforJ provides a flexible and organized navigation container to structure menus, sidebars, or other navigational elements. Each menu item is represented by an `AppNavItem`, allowing developers to configure paths, customize appearance, and organize items into hierarchical structures.
 
 ## Basics
 
-Each link or menu item in the navigation is represented by an `AppNavItem` which allows you to set a navigation path, add custom text, and include optional icons or other components as prefixes or suffixes. 
+The `AppNav` component supports creating intuitive navigation menus with a combination of `AppNav` and `AppNavItem` elements. Developers can easily add items, configure their behavior, and customize their appearance to fit the app’s requirements.
 
-To create a basic `AppNav` structure, you initialize the `AppNav` component and then add individual `AppNavItem` objects to represent the navigation links. 
-
-<ComponentDemo 
-path='https://demo.webforj.com/webapp/controlsamples/appnavbasics?'  
-javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/appnav/AppNavBasicsView.java'
+<AppLayoutViewer 
+path='https://demo.webforj.com/webapp/controlsamples/appnav?'  
+javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/appnav/AppNavView.java'
 height='200px'
 />
 
-## Configuring paths and routing
+## Adding and organizing items
+
+`AppNav` allows you to add navigation items and organize them into hierarchical structures. Each `AppNavItem` can represent a standalone link or a container for nested items.
+
+### Adding items
+
+You can create navigation items by initializing `AppNavItem` instances and adding them to an AppNav:
+
+```java
+AppNavItem homeItem = new AppNavItem("Home", "/home");
+AppNavItem profileItem = new AppNavItem("Profile", "/profile");
+
+appNav.addItem(homeItem);
+appNav.addItem(profileItem);
+```
+
+### Organizing nested items
+
+For hierarchical navigation, use `AppNavItem` to create groups of sub-items. The parent item acts as a container, and its sub-items can be expanded or collapsed dynamically.
+
+:::warning URLs on Top-Level Items with Nested Children 
+Leave the parent item’s path empty when adding nested items to avoid unintended navigation.
+:::
+
+<AppLayoutViewer 
+path='https://demo.webforj.com/webapp/controlsamples/appnavhierarchy?'  
+javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/appnav/AppNavHierarchyView.java'
+height='200px'
+/>
+
+## Automatic group expansion
+With `setAutoOpen()`, the `AppNav` component will automatically expand groups of items when the user navigates. This behavior is helpful for hierarchical menus where you want to expose sub-items dynamically.
+
+```java
+appNav.setAutoOpen(true); // Automatically opens selected groups
+```
+
+## Linking items
 
 The `AppNav` component's navigation feature relies on each `AppNavItem` being configured with a specific path or route, which enables it to link to different sections or views within an app. 
 
@@ -32,63 +67,27 @@ The `AppNav` component's navigation feature relies on each `AppNavItem` being co
 
 Each `AppNavItem` requires a path or route that specifies where the navigation item will take users. This can be configured in two main ways:
 
-- **Direct Path**: You can assign a direct URL or path to an `AppNavItem`. This is helpful for static routes or URLs.
+**Direct Path**: You can assign a direct URL or path to an `AppNavItem`. This is helpful for static routes or URLs.
 
 ```java
-AppNavItem profileItem = new AppNavItem("Profile", "/profile");
-appNav.addItem(profileItem);
+AppNavItem dashboardItem = new AppNavItem("Dashboard", "/dashboard");
+AppNavItem helpItem = new AppNavItem("Help", "https://support.example.com");
+
+appNav.addItem(dashboardItem);
+appNav.addItem(helpItem);
 ```
 
-- **Registered View Class**: Alternatively, if you have views registered with your app’s router, you can pass a class reference for the view. This approach provides flexibility, as it allows navigation to specific views without hardcoding URLs. The router automatically resolves the view’s path based on the registered configuration.
+**Registered View Class**: Alternatively, if you have views registered with your app’s router, you can pass a class reference for the view. This approach provides flexibility, as it allows navigation to specific views without hardcoding URLs. The router automatically resolves the view’s path based on the registered configuration.
 
 ```java
 AppNavItem settingsItem = new AppNavItem("Settings", SettingsView.class);
 appNav.addItem(settingsItem);
 ```
 
-:::caution Using registered view class
-If the router isn't initialized or the view isn’t registered, attempting to set the path with a view class will throw an exception. 
+:::tip Query Parameters
+To navigate to specific sections, use the `setQueryParameters()` method with a `ParametersBag` to define key-value pairs. 
 :::
-
-### Adding query parameters
-
-For scenarios requiring more specific navigation, such as directing users to particular sections of a page, you can add query parameters to an `AppNavItem`. The `setQueryParameters()` method accepts a `ParametersBag` object, allowing you to define multiple key-value pairs. 
-
-```java
-ParametersBag params = new ParametersBag();
-params.add("section", "overview");
-profileItem.setQueryParameters(params);
-```
-For more details on retrieving query parameters in different views, refer to the [Retrieving query parameters](../routing/query-parameters) section.  
-
-
-## Hierarchical navigation
-
-The `AppNav` component supports hierarchical navigation, which is essential for building complex navigation structures with nested items. Each `AppNavItem` can contain sub-items, creating a structured menu with multiple layers.
-
-To create a hierarchical structure, add sub-items to any `AppNavItem`. These sub-items appear as expandable sections within the parent item:
-
-<ComponentDemo 
-path='https://demo.webforj.com/webapp/controlsamples/appnavhierarchy?'  
-javaE='https://raw.githubusercontent.com/webforj/webforj-docs-samples/refs/heads/main/src/main/java/com/webforj/samples/views/appnav/AppNavHierarchyView.java'
-height='200px'
-/>
-
-:::warning URLs on Top-Level Items with Nested Children 
-Avoid assigning URLs to top-level items that contain nested items. If a parent item has a URL, selecting it may trigger unwanted navigation instead of expanding the menu. Leave the URL field empty for these parent items to ensure they function as containers for their child items only.
-:::
-
-## `AppNavLocationChangedEvent`
-
-The `AppNav` component provides a way to react to navigation changes through event listeners. By using the `onLocationChanged()` method, you can execute code each time a user selects an `AppNavItem` and navigates within the app.
-
-Here is how you can implement an event listener to respond to navigation actions within `AppNav`.
-
-```java
-appNav.onLocationChanged(event -> {
-    System.out.println("User navigated to: " + event.getLocation().getPath());
-});
-```
+ 
 
 ## Setting navigation targets
 
@@ -113,24 +112,24 @@ AppNavItem topItem = new AppNavItem("Top View", "/top");
 topItem.setTarget(AppNavItem.NavigationTarget.TOP); // Opens in the top-level context
 ```
 
+## Item Prefix and Suffix
 
-## Automatic group expansion
-With `setAutoOpen()`, the `AppNav` component will automatically expand groups of items when the user navigates. This behavior is helpful for hierarchical menus where you want to expose sub-items dynamically.
+The `AppNavItem` component allows you to customize its appearance and functionality by adding prefixes and suffixes. These are useful for enhancing the visual design or providing additional context, such as icons, badges, or other indicators, alongside the item's text.
+
+- **Prefixes**: Add elements or icons to appear before the item's label. For example, you can use an icon to represent the item's purpose visually.
+
+- **Suffixes**: Add elements or icons to appear after the item's label. This is often used for secondary information, such as a badge showing a count or a status indicator.
+
+Here's an example of adding a prefix and suffix:
 
 ```java
-appNav.setAutoOpen(true); // Automatically opens selected groups
+AppNavItem notificationsItem = new AppNavItem("Notifications");
+notificationsItem.setPrefix(new Icon(TablerIcon.BELL));
+notificationsItem.setSuffix(new Badge("3", Badge.Theme.INFO));
 ```
-## Styling
 
-### Shadow parts
+Prefixes and suffixes improve clarity and provide additional functionality, ensuring a more intuitive user experience for your app's navigation.
 
-These are the various parts of the [shadow DOM](../glossary#shadow-dom) for the `AppNavItem` component, which will be required when styling via CSS is desired.
+## Parts and CSS properties
 
-<TableBuilder tag={require('@site/docs/components/_dwc_control_map.json').AppNavItem} table='parts' exclusions=''/>
-
-
-### Reflected attributes
-
-The reflected attributes of a `AppNavItem` component will be shown as attributes in the rendered HTML element for the component in the DOM. This means that styling can be applied using these attributes.
-
-<TableBuilder tag={require('@site/docs/components/_dwc_control_map.json').AppNavItem} table="reflects" />
+<TableBuilder tag={require('@site/docs/components/_dwc_control_map.json').AppNavItem} />
