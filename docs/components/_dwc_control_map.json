@@ -3,7 +3,7 @@
 "SplitPane" :"dwc-splitter",
 "Button" :"dwc-button",
 "TextArea" :"dwc-textarea",
-"Checkbox" :"dwc-checkbox",
+"CheckBox" :"dwc-checkbox",
 "Color-Chooser" :"dwc-color-chooser",
 "Field" :"dwc-field",
 "SpinnerField" :"dwc-field-spinner",
