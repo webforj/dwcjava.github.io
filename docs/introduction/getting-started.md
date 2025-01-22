@@ -25,6 +25,7 @@ Open a terminal and move to the folder where you want to create your new project
 2) **Run the `archetype:generate` command**:
 Use the Maven command below, and customize the `groupId`, `artifactId`, and `version` as needed for your project.
 
+<!-- vale off -->
 <Tabs>
   <TabItem value="bash" label="Bash/Zsh" default>
   ```bash
@@ -49,7 +50,19 @@ Use the Maven command below, and customize the `groupId`, `artifactId`, and `ver
     -B
   ```
   </TabItem>
+  <TabItem value="cmd" label="Command Prompt">
+  ```
+  mvn -B archetype:generate ^
+  -DarchetypeGroupId=com.webforj ^
+  -DarchetypeArtifactId=webforj-archetype-hello-world ^
+  -DgroupId=org.example ^
+  -DarchetypeVersion=LATEST ^
+  -DartifactId=my-hello-world-app ^
+  -Dversion=1.0-SNAPSHOT
+  ```
+  </TabItem>
 </Tabs>
+<!-- vale on -->
 
 | Argument             | Explanation                                                                 |
 |----------------------|-----------------------------------------------------------------------------|
