@@ -30,7 +30,7 @@ height = '800px'
 The `FileSaveDialog` returns the selected path as a string. If the user cancels the dialog, the result will be `null`.
 
 :::important Dialog Purpose
-This dialog doesn't actually cause any files to be saved but returns the name the user has selected.
+This dialog doesn't actually cause any files to be saved but returns the filename the user has selected.
 :::
 
 :::info
