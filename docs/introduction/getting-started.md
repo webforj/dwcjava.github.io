@@ -40,14 +40,13 @@ Use the Maven command below, and customize the `groupId`, `artifactId`, and `ver
   </TabItem>
   <TabItem value="powershell" label="PowerShell">
   ```powershell
-  mvn archetype:generate `
-    -DarchetypeGroupId="com.webforj" `
-    -DarchetypeArtifactId="webforj-archetype-hello-world" `
-    -DarchetypeVersion="LATEST" `
-    -DgroupId="org.example" `
-    -DartifactId="my-hello-world-app" `
-    -Dversion="1.0-SNAPSHOT" `
-    -B
+  mvn -B archetype:generate `
+  -DarchetypeGroupId="com.webforj" `
+  -DarchetypeArtifactId="webforj-archetype-hello-world" `
+  -DarchetypeVersion="LATEST" `
+  -DgroupId="org.example" `
+  -DartifactId="my-hello-world-app" `
+  -Dversion="1.0-SNAPSHOT" 
   ```
   </TabItem>
   <TabItem value="cmd" label="Command Prompt">
