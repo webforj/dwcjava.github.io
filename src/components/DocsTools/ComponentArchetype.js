@@ -5,7 +5,7 @@ import TabItem from "@theme/TabItem";
 import CodeBlock from "@theme/CodeBlock";
 
 export default function ComponentArchetype({project}){
-  return(<div>
+  return(<>
   <p>To create and scaffold a new <code>{project}</code> project, follow these steps:
   </p>
   <ol>
@@ -84,11 +84,11 @@ export default function ComponentArchetype({project}){
       </tr>
       <tr>
         <td><code>appName</code></td>
-        <td>An optional parameter, when provided, can be used in the generated project's POM file. Depending on the used webforJ archetype, it can be utilized as a default title for the application. </td>
+        <td>An optional parameter that can be used in the generated project's POM file. Depending on the used webforJ archetype, it can be utilized as a default title for the application. </td>
       </tr>
     </tbody>
   </table>
 <p>After running the command, Maven will generate the project files necessary to run the project.
 </p>
-</div>);
+</>);
 }
