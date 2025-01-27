@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkdwcj_documentation=self.webpackChunkdwcj_documentation||[]).push([[5076],{74380:(e,t,c)=>{c.r(t),c.d(t,{default:()=>l});var n=c(17437),d=(c(96540),c(41957)),i=c(2445);function l(){n.AH`
-    `;return(0,i.Y)(d.A,{title:"Hello",description:"Hello React Page",children:(0,i.Y)("div",{children:"live_demo"})})}}}]);

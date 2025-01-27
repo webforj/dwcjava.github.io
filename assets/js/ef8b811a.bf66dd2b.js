@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdwcj_documentation=self.webpackChunkdwcj_documentation||[]).push([[8947],{56600:e=>{e.exports=JSON.parse('{"authors":[{"name":"webforJ Team","url":"https://github.com/webforj","title":"webforJ Development Team","imageURL":"/img/webforj_icon.svg","key":"webforJ","page":null,"count":8}]}')}}]);
